@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180429 14:43:21.856" generator="Robot 3.0.4 (Python 2.7.15rc1 on linux2)">
+<suite source="/home/estanqueiro/projects/mystore/Tests/MyStore.robot" id="s1" name="MyStore">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180429 14:43:21.928" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180429 14:43:25.929" starttime="20180429 14:43:21.927"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180429 14:43:26.025" starttime="20180429 14:43:25.929"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20180429 14:43:26.025" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180429 14:43:32.447" starttime="20180429 14:43:26.025"></status>
+</kw>
+<kw name="Verificar &quot;HomePage&quot; Carregada" library="HomePage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Automation Practice Website</arg>
+</arguments>
+<status status="PASS" endtime="20180429 14:43:32.518" starttime="20180429 14:43:32.447"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20180429 14:43:32.521" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180429 14:43:32.521" starttime="20180429 14:43:32.518"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:32.521" starttime="20180429 14:43:32.447"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:32.521" starttime="20180429 14:43:21.927"></status>
+</kw>
+<test id="s1-t1" name="Usuário não logado pode procurar produtos">
+<kw name="Procurar Produtos" library="MyStoreApp">
+<kw name="Informar Termo de Busca" library="MyStoreApp">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BAR}</arg>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<msg timestamp="20180429 14:43:32.524" level="INFO">Typing text 'T-shirts' into text field 'id=search_query_top'.</msg>
+<status status="PASS" endtime="20180429 14:43:32.602" starttime="20180429 14:43:32.524"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:32.602" starttime="20180429 14:43:32.524"></status>
+</kw>
+<kw name="Submeter Busca" library="MyStoreApp">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180429 14:43:32.602" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" endtime="20180429 14:43:34.282" starttime="20180429 14:43:32.602"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:34.282" starttime="20180429 14:43:32.602"></status>
+</kw>
+<kw name="Verificar &quot;Busca Completa&quot;" library="MyStoreApp">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Showing</arg>
+</arguments>
+<status status="PASS" endtime="20180429 14:43:34.401" starttime="20180429 14:43:34.282"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:34.401" starttime="20180429 14:43:34.282"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:34.401" starttime="20180429 14:43:32.523"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:34.401" critical="yes" starttime="20180429 14:43:32.521"></status>
+</test>
+<test id="s1-t2" name="Usuário não logado pode visualizar produtos">
+<kw name="Procurar Produtos" library="MyStoreApp">
+<kw name="Informar Termo de Busca" library="MyStoreApp">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BAR}</arg>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<msg timestamp="20180429 14:43:34.406" level="INFO">Typing text 'T-shirts' into text field 'id=search_query_top'.</msg>
+<status status="PASS" endtime="20180429 14:43:34.508" starttime="20180429 14:43:34.406"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:34.508" starttime="20180429 14:43:34.406"></status>
+</kw>
+<kw name="Submeter Busca" library="MyStoreApp">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180429 14:43:34.509" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" endtime="20180429 14:43:35.838" starttime="20180429 14:43:34.509"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:35.838" starttime="20180429 14:43:34.508"></status>
+</kw>
+<kw name="Verificar &quot;Busca Completa&quot;" library="MyStoreApp">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Showing</arg>
+</arguments>
+<status status="PASS" endtime="20180429 14:43:35.928" starttime="20180429 14:43:35.843"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:35.928" starttime="20180429 14:43:35.842"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:35.928" starttime="20180429 14:43:34.406"></status>
+</kw>
+<kw name="Selecionar Produto No Resultado Da Busca" library="MyStoreApp">
+<kw name="Procurar Produtos" library="MyStoreApp">
+<kw name="Informar Termo de Busca" library="MyStoreApp">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BAR}</arg>
+<arg>${SEARCH_TERM}</arg>
+</arguments>
+<msg timestamp="20180429 14:43:35.929" level="INFO">Typing text 'T-shirts' into text field 'id=search_query_top'.</msg>
+<status status="PASS" endtime="20180429 14:43:36.021" starttime="20180429 14:43:35.929"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:36.021" starttime="20180429 14:43:35.929"></status>
+</kw>
+<kw name="Submeter Busca" library="MyStoreApp">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180429 14:43:36.027" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" endtime="20180429 14:43:37.303" starttime="20180429 14:43:36.022"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:37.303" starttime="20180429 14:43:36.021"></status>
+</kw>
+<kw name="Verificar &quot;Busca Completa&quot;" library="MyStoreApp">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Showing</arg>
+</arguments>
+<status status="PASS" endtime="20180429 14:43:37.393" starttime="20180429 14:43:37.304"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:37.394" starttime="20180429 14:43:37.303"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:37.394" starttime="20180429 14:43:35.928"></status>
+</kw>
+<kw name="Selecionar Produto" library="MyStoreApp">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>class=product_img_link</arg>
+</arguments>
+<msg timestamp="20180429 14:43:37.399" level="INFO">Clicking link 'class=product_img_link'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180429 14:43:37.597" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180429 14:43:37.597" starttime="20180429 14:43:37.434"></status>
+</kw>
+<msg timestamp="20180429 14:43:37.599" level="FAIL">ElementNotInteractableException: Message: Element &lt;a class="product_img_link" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product&amp;search_query=T-shirts&amp;results=1"&gt; could not be scrolled into view
+</msg>
+<status status="FAIL" endtime="20180429 14:43:37.599" starttime="20180429 14:43:37.399"></status>
+</kw>
+<status status="FAIL" endtime="20180429 14:43:37.599" starttime="20180429 14:43:37.398"></status>
+</kw>
+<status status="FAIL" endtime="20180429 14:43:37.600" starttime="20180429 14:43:35.928"></status>
+</kw>
+<status status="FAIL" endtime="20180429 14:43:37.600" critical="yes" starttime="20180429 14:43:34.402">ElementNotInteractableException: Message: Element &lt;a class="product_img_link" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product&amp;search_query=T-shirts&amp;results=1"&gt; could not be scrolled into view
+</status>
+</test>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180429 14:43:38.627" starttime="20180429 14:43:37.607"></status>
+</kw>
+<status status="PASS" endtime="20180429 14:43:38.628" starttime="20180429 14:43:37.607"></status>
+</kw>
+<doc>Esta suite representa os testes do DEMOCENTER para a aplicação web MyStore</doc>
+<status status="FAIL" endtime="20180429 14:43:38.628" starttime="20180429 14:43:21.857"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="MyStore" pass="1">MyStore</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
