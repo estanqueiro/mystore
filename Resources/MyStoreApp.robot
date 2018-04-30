@@ -1,34 +1,44 @@
 *** Settings ***
 Resource  ../Resources/PO/HomePage.robot
+Resource  ../Resources/PO/SearchPage.robot
+Resource  ../Resources/PO/SearchResultsPage.robot
+Resource  ../Resources/PO/ProductPage.robot
+Resource  ../Resources/PO/CartPage.robot
+Resource  ../Resources/PO/SignInPage.robot
+Resource  ../Resources/PO/AddressPage.robot
+Resource  ../Resources/PO/ShippingPage.robot
+Resource  ../Resources/PO/PaymentPage.robot
+Resource  ../Resources/PO/OrderSummaryPage.robot
 
-
-
-*** Variables ***
-${SEARCH_BAR} =     id=search_query_top
-${SEARCH_BUTTON} =  name=submit_search
 
 *** Keywords ***
 Login
     HomePage.Fazer "Login"
 
 Procurar Produtos
-    Informar Termo de Busca
-    Submeter Busca
-    Verificar "Busca Completa"
+    SearchPage.Procurar Produtos
+    SearchResultsPage.Verificar "Busca Completa"
 
 Selecionar Produto No Resultado Da Busca
-    Procurar Produtos
-    Selecionar Produto
+    SearchResultsPage.Selecionar Produto
+    ProductPage.Verificar "Página do Produto" Carregada
 
+Adicionar Produto ao Carrinho
+    ProductPage.Adicionar ao Carrinho
+    CartPage.Verificar Produto Adicionado
 
-Informar Termo de Busca
-    Input Text  ${SEARCH_BAR}  ${SEARCH_TERM}
+Fazer Checkout Não Logado
+    CartPage.Iniciar Checkout
+    CartPage.Proceder ao Checkout
+    SignInPage.Verificar "Sign In Page" Carregada
 
-Submeter Busca
-    Click Button  ${SEARCH_BUTTON}
-
-Selecionar Produto
-    Click Link   class=product_img_link
-
-Verificar "Busca Completa"
-    Wait Until Page Contains  Showing
+Fazer Checkout Logado
+    CartPage.Iniciar Checkout
+    CartPage.Proceder ao Checkout
+    SignInPage.Verificar "Sign In Page" Carregada
+    SignInPage.Fazer Login  ${USERNAME}  ${PASSWORD}
+    AddressPage.Confirmar "Endereço"
+    ShippingPage.Aceite Aos "Termos De Serviço"
+    ShippingPage.Continuar Checkout
+    PaymentPage.Select "Payment" Method
+    OrderSummaryPage.Confirmar "Ordem"

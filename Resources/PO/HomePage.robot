@@ -1,10 +1,5 @@
 *** Settings ***
-Library  SeleniumLibrary
-
 Resource  ../PO/SignInPage.robot
-
-*** Variables ***
-
 
 *** Keywords ***
 Verificar "HomePage" Carregada
