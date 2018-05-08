@@ -1,8 +1,10 @@
 *** Settings ***
+Library  SeleniumLibrary
+
 Resource  ../PO/SignInPage.robot
 
 *** Keywords ***
-Verificar "HomePage" Carregada
+Verificar "Home Page" Carregada
     Wait Until Page Contains  Automation Practice Website
     Title Should Be  My Store
 

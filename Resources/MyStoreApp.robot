@@ -9,11 +9,15 @@ Resource  ../Resources/PO/AddressPage.robot
 Resource  ../Resources/PO/ShippingPage.robot
 Resource  ../Resources/PO/PaymentPage.robot
 Resource  ../Resources/PO/OrderSummaryPage.robot
+Resource  ../Resources/PO/MyAccountPage.robot
 
 
 *** Keywords ***
-Login
-    HomePage.Fazer "Login"
+Fazer "Login"
+    [Arguments]  ${Credentials}
+    HomePage.Navegar à Página de Login
+    SignInPage.Entrar Credenciais   ${Credentials}
+    MyAccountPage.Verificar "My Account Page" Carregada
 
 Testar Múltiplos Cenários de Login
     [Arguments]  ${Credentials}
@@ -21,10 +25,6 @@ Testar Múltiplos Cenários de Login
     SignInPage.Tentativa De Login  ${Credentials}
     SignInPage.Verificar Mensagem de Erro do Login  ${Credentials.ExpectedErrorMessage}
     SignInPage.Limpar Campos De Entrada
-
-
-
-
 
 Procurar Produtos
     SearchPage.Procurar Produtos
@@ -44,10 +44,11 @@ Fazer Checkout Não Logado
     SignInPage.Verificar "Sign In Page" Carregada
 
 Fazer Checkout Logado
+    [Arguments]  ${Credentials}
     CartPage.Iniciar Checkout
     CartPage.Proceder ao Checkout
     SignInPage.Verificar "Sign In Page" Carregada
-    SignInPage.Fazer Login  ${USERNAME}  ${PASSWORD}
+    SignInPage.Entrar Credenciais   ${Credentials}
     AddressPage.Confirmar "Endereço"
     ShippingPage.Aceite Aos "Termos De Serviço"
     ShippingPage.Continuar Checkout

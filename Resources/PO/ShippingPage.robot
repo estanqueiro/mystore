@@ -1,3 +1,6 @@
+*** Settings ***
+Library  SeleniumLibrary
+
 *** Variables ***
 ${CHECK_BOX_AGREEMENT} =  id=cgv
 ${PROCEED_TO_CHECKOUT_FOURTH_BUTTON} =  name : processCarrier

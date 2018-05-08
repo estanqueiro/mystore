@@ -1,3 +1,6 @@
+*** Settings ***
+Library  SeleniumLibrary
+
 *** Variables ***
 ${SIGN_IN_EMAIL} =     id=email
 ${SIGN_IN_PASSWORD} =  id=passwd

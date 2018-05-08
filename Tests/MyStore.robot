@@ -6,7 +6,7 @@ Resource  ../Resources/Common.robot
 Resource  ../Resources/MyStoreApp.robot
 
 Test Setup  Common.Begin Web Test
-Suite Teardown  Common.End Web Test
+Test Teardown  Common.End Web Test
 
 # robot -d Results Tests/MyStore.robot
 # robot -d Results -i Regression Tests/MyStore.robot
@@ -16,6 +16,7 @@ Suite Teardown  Common.End Web Test
 
 *** Test Cases ***
 Login
+    MyStoreApp.Fazer "Login"    ${VALID_USER_AND_PASSWORD}
 
 Tentativa de login deve apresentar mensagem de erro correta
     [Tags]  Login
@@ -49,4 +50,4 @@ Usuário logado pode fazer check out
     MyStoreApp.Procurar Produtos
     MyStoreApp.Selecionar Produto no Resultado da Busca
     MyStoreApp.Adicionar Produto ao Carrinho
-    MyStoreApp.Fazer Checkout Logado
+    MyStoreApp.Fazer Checkout Logado  ${VALID_USER_AND_PASSWORD}
