@@ -1,14 +1,28 @@
 *** Variables ***
-${USERNAME_FIELD} =  id=email
-${PASSWORD_FIELD} =  id=passwd
-${LOGIN_BUTTON} =  name : SubmitLogin
+${SIGN_IN_EMAIL} =     id=email
+${SIGN_IN_PASSWORD} =  id=passwd
+${LOGIN_BUTTON} =      name : SubmitLogin
+${ALERT_BOX} =         class : alert-danger
 
 *** Keywords ***
 Verificar "Sign In Page" Carregada
     Wait Until Page Contains  Authentication
 
-Fazer Login
-    [Arguments]     ${Username}      ${Password}
-    Input Text      ${USERNAME_FIELD}  ${USERNAME}
-    Input Password  ${PASSWORD_FIELD}  ${PASSWORD}
+Tentativa De Login
+    [Arguments]  ${Credentials}
+    Entrar Credenciais  ${Credentials}
+
+Entrar Credenciais
+    [Arguments]  ${Credentials}
+    Run Keyword Unless  '${Credentials.Email}' == '#BLANK'      Input Text      ${SIGN_IN_EMAIL}     ${Credentials.Email}
+    Run Keyword Unless  '${Credentials.Password}' == '#BLANK'   Input Text      ${SIGN_IN_PASSWORD}  ${Credentials.Password}
     Click Button    ${LOGIN_BUTTON}
+
+Verificar Mensagem De Erro Do Login
+    [Arguments]  ${ExpectedErrorMessage}
+    Wait Until Page Contains Element  ${ALERT_BOX}
+    Page Should Contain  ${ExpectedErrorMessage}
+
+Limpar Campos De Entrada
+    Clear Element Text  ${SIGN_IN_EMAIL}
+    Clear Element Text  ${SIGN_IN_PASSWORD}

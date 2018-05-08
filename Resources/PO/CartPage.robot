@@ -12,7 +12,7 @@ Verificar Produto Adicionado
     Wait Until Page Contains    Product successfully added to your shopping cart
 
 Iniciar Checkout
-    Click Element  ${PROCEED_TO_CHECKOUT_FIRST_BUTTON}
+    Click Link  ${PROCEED_TO_CHECKOUT_FIRST_BUTTON}
     Wait Until Page Contains  Shopping-cart summary
 
 Proceder ao Checkout

@@ -1,10 +1,11 @@
 *** Settings ***
 Documentation  Esta suite representa os testes do DEMOCENTER para a aplicação web MyStore
 
+Resource  ../Data/InputData.robot
 Resource  ../Resources/Common.robot
 Resource  ../Resources/MyStoreApp.robot
 
-Suite Setup  Common.Begin Web Test
+Test Setup  Common.Begin Web Test
 Suite Teardown  Common.End Web Test
 
 # robot -d Results Tests/MyStore.robot
@@ -12,17 +13,17 @@ Suite Teardown  Common.End Web Test
 # export PATH=$PATH:~/drivers
 
 *** Variables ***
-${BROWSER} =  chrome
-${START_URL} =  http://automationpractice.com/index.php/
-${SEARCH_TERM} =  summer dresses
-${USERNAME} =  paulo@test.com.br
-${PASSWORD} =  teste
 
 *** Test Cases ***
-#Cadastrar usuário
-#
-#Usuário cadastrado deve conseguir fazer login
-#    MyStoreApp.Login
+Login
+
+Tentativa de login deve apresentar mensagem de erro correta
+    [Tags]  Login
+    [Template]  Testar Múltiplos Cenários de Login
+    ${UNREGISTERED_USER}
+    ${INVALID_PASSWORD_USER}
+    ${BLANK_CREDENTIALS_USER}
+    ${BLANK_PASSWORD}
 
 Usuário não logado pode procurar produtos
     MyStoreApp.Procurar Produtos

@@ -15,6 +15,17 @@ Resource  ../Resources/PO/OrderSummaryPage.robot
 Login
     HomePage.Fazer "Login"
 
+Testar Múltiplos Cenários de Login
+    [Arguments]  ${Credentials}
+    HomePage.Navegar à Página de Login
+    SignInPage.Tentativa De Login  ${Credentials}
+    SignInPage.Verificar Mensagem de Erro do Login  ${Credentials.ExpectedErrorMessage}
+    SignInPage.Limpar Campos De Entrada
+
+
+
+
+
 Procurar Produtos
     SearchPage.Procurar Produtos
     SearchResultsPage.Verificar "Busca Completa"
