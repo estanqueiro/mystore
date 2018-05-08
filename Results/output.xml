@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180508 14:22:44.725" generator="Robot 3.0.4 (Python 2.7.15rc1 on linux2)">
-<suite source="/home/estanqueiro/projects/mystore/Tests/MyStore.robot" id="s1" name="MyStore">
-<test id="s1-t1" name="Login">
+<robot generated="20180508 16:57:29.045" generator="Robot 3.0.4 (Python 2.7.15rc1 on linux2)">
+<suite source="/home/estanqueiro/projects/mystore/Tests" id="s1" name="Tests">
+<suite source="/home/estanqueiro/projects/mystore/Tests/Carrinho.robot" id="s1-s1" name="Carrinho">
+<test id="s1-s1-t1" name="Usuário não logado pode procurar produtos">
 <kw type="setup" name="Begin Web Test" library="Common">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -9,20 +10,20 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180508 14:22:44.856" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20180508 14:22:50.045" starttime="20180508 14:22:44.856"></status>
+<msg timestamp="20180508 16:57:29.272" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180508 16:57:34.004" starttime="20180508 16:57:29.272"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180508 14:22:50.154" starttime="20180508 14:22:50.046"></status>
+<status status="PASS" endtime="20180508 16:57:34.110" starttime="20180508 16:57:34.004"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>${START_URL}</arg>
 </arguments>
-<msg timestamp="20180508 14:22:50.154" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
-<status status="PASS" endtime="20180508 14:22:55.287" starttime="20180508 14:22:50.154"></status>
+<msg timestamp="20180508 16:57:34.110" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180508 16:57:39.265" starttime="20180508 16:57:34.110"></status>
 </kw>
 <kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -30,680 +31,19 @@
 <arguments>
 <arg>Automation Practice Website</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:22:55.372" starttime="20180508 14:22:55.299"></status>
+<status status="PASS" endtime="20180508 16:57:39.322" starttime="20180508 16:57:39.266"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20180508 14:22:55.382" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20180508 14:22:55.382" starttime="20180508 14:22:55.372"></status>
+<msg timestamp="20180508 16:57:39.333" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180508 16:57:39.333" starttime="20180508 16:57:39.322"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:22:55.382" starttime="20180508 14:22:55.293"></status>
+<status status="PASS" endtime="20180508 16:57:39.334" starttime="20180508 16:57:39.265"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:22:55.382" starttime="20180508 14:22:44.855"></status>
-</kw>
-<kw name="Fazer &quot;Login&quot;" library="MyStoreApp">
-<arguments>
-<arg>${VALID_USER_AND_PASSWORD}</arg>
-</arguments>
-<kw name="Navegar à Página de Login" library="HomePage">
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>Sign in</arg>
-</arguments>
-<msg timestamp="20180508 14:22:55.385" level="INFO">Clicking link 'Sign in'.</msg>
-<status status="PASS" endtime="20180508 14:22:57.402" starttime="20180508 14:22:55.385"></status>
-</kw>
-<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Authentication</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:22:57.511" starttime="20180508 14:22:57.403"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:22:57.511" starttime="20180508 14:22:57.402"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:22:57.511" starttime="20180508 14:22:55.384"></status>
-</kw>
-<kw name="Entrar Credenciais" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Email}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<msg timestamp="20180508 14:22:57.517" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
-<status status="PASS" endtime="20180508 14:22:57.631" starttime="20180508 14:22:57.516"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:22:57.631" starttime="20180508 14:22:57.516"></status>
-</kw>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Password}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_PASSWORD}</arg>
-<arg>${Credentials.Password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_PASSWORD}</arg>
-<arg>${Credentials.Password}</arg>
-</arguments>
-<msg timestamp="20180508 14:22:57.632" level="INFO">Typing text 'teste' into text field 'id=passwd'.</msg>
-<status status="PASS" endtime="20180508 14:22:57.754" starttime="20180508 14:22:57.632"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:22:57.754" starttime="20180508 14:22:57.632"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${LOGIN_BUTTON}</arg>
-</arguments>
-<msg timestamp="20180508 14:22:57.754" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
-<status status="PASS" endtime="20180508 14:22:59.788" starttime="20180508 14:22:57.754"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:22:59.788" starttime="20180508 14:22:57.511"></status>
-</kw>
-<kw name="Verificar &quot;My Account Page&quot; Carregada" library="MyAccountPage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Welcome to your account.</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:22:59.923" starttime="20180508 14:22:59.789"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:22:59.924" starttime="20180508 14:22:59.788"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:22:59.924" starttime="20180508 14:22:55.384"></status>
-</kw>
-<kw type="teardown" name="End Web Test" library="Common">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180508 14:23:01.468" starttime="20180508 14:22:59.931"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:01.469" starttime="20180508 14:22:59.931"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:01.469" critical="yes" starttime="20180508 14:22:44.855"></status>
-</test>
-<test id="s1-t2" name="Tentativa de login deve apresentar mensagem de erro correta">
-<kw type="setup" name="Begin Web Test" library="Common">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:01.473" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20180508 14:23:06.116" starttime="20180508 14:23:01.472"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180508 14:23:06.277" starttime="20180508 14:23:06.116"></status>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the active browser instance to the provided ``url``.</doc>
-<arguments>
-<arg>${START_URL}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:06.277" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
-<status status="PASS" endtime="20180508 14:23:11.466" starttime="20180508 14:23:06.277"></status>
-</kw>
-<kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Automation Practice Website</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:11.526" starttime="20180508 14:23:11.466"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20180508 14:23:11.533" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20180508 14:23:11.533" starttime="20180508 14:23:11.526"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:11.533" starttime="20180508 14:23:11.466"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:11.533" starttime="20180508 14:23:01.472"></status>
-</kw>
-<kw name="Testar Múltiplos Cenários de Login" library="MyStoreApp">
-<arguments>
-<arg>${UNREGISTERED_USER}</arg>
-</arguments>
-<kw name="Navegar à Página de Login" library="HomePage">
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>Sign in</arg>
-</arguments>
-<msg timestamp="20180508 14:23:11.534" level="INFO">Clicking link 'Sign in'.</msg>
-<status status="PASS" endtime="20180508 14:23:13.642" starttime="20180508 14:23:11.534"></status>
-</kw>
-<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Authentication</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:13.727" starttime="20180508 14:23:13.642"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:13.727" starttime="20180508 14:23:13.642"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:13.727" starttime="20180508 14:23:11.534"></status>
-</kw>
-<kw name="Tentativa De Login" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Entrar Credenciais" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Email}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:13.732" level="INFO">Typing text 'paulo@test.com' into text field 'id=email'.</msg>
-<status status="PASS" endtime="20180508 14:23:13.833" starttime="20180508 14:23:13.731"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:13.833" starttime="20180508 14:23:13.731"></status>
-</kw>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Password}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_PASSWORD}</arg>
-<arg>${Credentials.Password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_PASSWORD}</arg>
-<arg>${Credentials.Password}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:13.834" level="INFO">Typing text 'teste' into text field 'id=passwd'.</msg>
-<status status="PASS" endtime="20180508 14:23:13.967" starttime="20180508 14:23:13.834"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:13.967" starttime="20180508 14:23:13.834"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${LOGIN_BUTTON}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:13.968" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
-<status status="PASS" endtime="20180508 14:23:15.601" starttime="20180508 14:23:13.967"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:15.601" starttime="20180508 14:23:13.728"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:15.601" starttime="20180508 14:23:13.727"></status>
-</kw>
-<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
-<arguments>
-<arg>${Credentials.ExpectedErrorMessage}</arg>
-</arguments>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${ALERT_BOX}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:15.697" starttime="20180508 14:23:15.602"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>${ExpectedErrorMessage}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:15.730" level="INFO">Current page contains text 'Authentication failed.'.</msg>
-<status status="PASS" endtime="20180508 14:23:15.730" starttime="20180508 14:23:15.697"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:15.731" starttime="20180508 14:23:15.601"></status>
-</kw>
-<kw name="Limpar Campos De Entrada" library="SignInPage">
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<doc>Clears the value of text entry element identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_EMAIL}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:15.778" starttime="20180508 14:23:15.731"></status>
-</kw>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<doc>Clears the value of text entry element identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_PASSWORD}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:15.845" starttime="20180508 14:23:15.778"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:15.845" starttime="20180508 14:23:15.731"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:15.845" starttime="20180508 14:23:11.533"></status>
-</kw>
-<kw name="Testar Múltiplos Cenários de Login" library="MyStoreApp">
-<arguments>
-<arg>${INVALID_PASSWORD_USER}</arg>
-</arguments>
-<kw name="Navegar à Página de Login" library="HomePage">
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>Sign in</arg>
-</arguments>
-<msg timestamp="20180508 14:23:15.849" level="INFO">Clicking link 'Sign in'.</msg>
-<status status="PASS" endtime="20180508 14:23:17.616" starttime="20180508 14:23:15.848"></status>
-</kw>
-<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Authentication</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:17.716" starttime="20180508 14:23:17.624"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:17.716" starttime="20180508 14:23:17.624"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:17.716" starttime="20180508 14:23:15.848"></status>
-</kw>
-<kw name="Tentativa De Login" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Entrar Credenciais" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Email}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:17.721" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
-<status status="PASS" endtime="20180508 14:23:17.880" starttime="20180508 14:23:17.718"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:17.880" starttime="20180508 14:23:17.717"></status>
-</kw>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Password}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_PASSWORD}</arg>
-<arg>${Credentials.Password}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_PASSWORD}</arg>
-<arg>${Credentials.Password}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:17.881" level="INFO">Typing text 'abc' into text field 'id=passwd'.</msg>
-<status status="PASS" endtime="20180508 14:23:17.944" starttime="20180508 14:23:17.881"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:17.944" starttime="20180508 14:23:17.880"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${LOGIN_BUTTON}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:17.944" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
-<status status="PASS" endtime="20180508 14:23:19.233" starttime="20180508 14:23:17.944"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:19.233" starttime="20180508 14:23:17.717"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:19.234" starttime="20180508 14:23:17.717"></status>
-</kw>
-<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
-<arguments>
-<arg>${Credentials.ExpectedErrorMessage}</arg>
-</arguments>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${ALERT_BOX}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:19.309" starttime="20180508 14:23:19.234"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>${ExpectedErrorMessage}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:19.369" level="INFO">Current page contains text 'Invalid password.'.</msg>
-<status status="PASS" endtime="20180508 14:23:19.369" starttime="20180508 14:23:19.309"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:19.369" starttime="20180508 14:23:19.234"></status>
-</kw>
-<kw name="Limpar Campos De Entrada" library="SignInPage">
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<doc>Clears the value of text entry element identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_EMAIL}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:19.411" starttime="20180508 14:23:19.369"></status>
-</kw>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<doc>Clears the value of text entry element identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_PASSWORD}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:19.456" starttime="20180508 14:23:19.411"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:19.456" starttime="20180508 14:23:19.369"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:19.456" starttime="20180508 14:23:15.848"></status>
-</kw>
-<kw name="Testar Múltiplos Cenários de Login" library="MyStoreApp">
-<arguments>
-<arg>${BLANK_CREDENTIALS_USER}</arg>
-</arguments>
-<kw name="Navegar à Página de Login" library="HomePage">
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>Sign in</arg>
-</arguments>
-<msg timestamp="20180508 14:23:19.457" level="INFO">Clicking link 'Sign in'.</msg>
-<status status="PASS" endtime="20180508 14:23:20.998" starttime="20180508 14:23:19.457"></status>
-</kw>
-<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Authentication</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:21.102" starttime="20180508 14:23:20.999"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:21.102" starttime="20180508 14:23:20.999"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:21.102" starttime="20180508 14:23:19.457"></status>
-</kw>
-<kw name="Tentativa De Login" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Entrar Credenciais" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Email}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:21.104" starttime="20180508 14:23:21.103"></status>
-</kw>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Password}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_PASSWORD}</arg>
-<arg>${Credentials.Password}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:21.104" starttime="20180508 14:23:21.104"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${LOGIN_BUTTON}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:21.113" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
-<status status="PASS" endtime="20180508 14:23:22.281" starttime="20180508 14:23:21.108"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:22.282" starttime="20180508 14:23:21.103"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:22.282" starttime="20180508 14:23:21.102"></status>
-</kw>
-<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
-<arguments>
-<arg>${Credentials.ExpectedErrorMessage}</arg>
-</arguments>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${ALERT_BOX}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:22.367" starttime="20180508 14:23:22.285"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>${ExpectedErrorMessage}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:22.410" level="INFO">Current page contains text 'An email address required.'.</msg>
-<status status="PASS" endtime="20180508 14:23:22.410" starttime="20180508 14:23:22.367"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:22.410" starttime="20180508 14:23:22.284"></status>
-</kw>
-<kw name="Limpar Campos De Entrada" library="SignInPage">
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<doc>Clears the value of text entry element identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_EMAIL}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:22.445" starttime="20180508 14:23:22.410"></status>
-</kw>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<doc>Clears the value of text entry element identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_PASSWORD}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:22.466" starttime="20180508 14:23:22.445"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:22.466" starttime="20180508 14:23:22.410"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:22.466" starttime="20180508 14:23:19.456"></status>
-</kw>
-<kw name="Testar Múltiplos Cenários de Login" library="MyStoreApp">
-<arguments>
-<arg>${BLANK_PASSWORD}</arg>
-</arguments>
-<kw name="Navegar à Página de Login" library="HomePage">
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>Sign in</arg>
-</arguments>
-<msg timestamp="20180508 14:23:22.467" level="INFO">Clicking link 'Sign in'.</msg>
-<status status="PASS" endtime="20180508 14:23:24.102" starttime="20180508 14:23:22.467"></status>
-</kw>
-<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Authentication</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:24.247" starttime="20180508 14:23:24.103"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:24.247" starttime="20180508 14:23:24.102"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:24.247" starttime="20180508 14:23:22.467"></status>
-</kw>
-<kw name="Tentativa De Login" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Entrar Credenciais" library="SignInPage">
-<arguments>
-<arg>${Credentials}</arg>
-</arguments>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Email}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_EMAIL}</arg>
-<arg>${Credentials.Email}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:24.249" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
-<status status="PASS" endtime="20180508 14:23:24.385" starttime="20180508 14:23:24.249"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:24.385" starttime="20180508 14:23:24.248"></status>
-</kw>
-<kw name="Run Keyword Unless" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
-<arguments>
-<arg>'${Credentials.Password}' == '#BLANK'</arg>
-<arg>Input Text</arg>
-<arg>${SIGN_IN_PASSWORD}</arg>
-<arg>${Credentials.Password}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:24.386" starttime="20180508 14:23:24.385"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${LOGIN_BUTTON}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:24.387" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
-<status status="PASS" endtime="20180508 14:23:25.788" starttime="20180508 14:23:24.387"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:25.789" starttime="20180508 14:23:24.248"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:25.790" starttime="20180508 14:23:24.247"></status>
-</kw>
-<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
-<arguments>
-<arg>${Credentials.ExpectedErrorMessage}</arg>
-</arguments>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>${ALERT_BOX}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:25.914" starttime="20180508 14:23:25.819"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>${ExpectedErrorMessage}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:25.952" level="INFO">Current page contains text 'Password is required.'.</msg>
-<status status="PASS" endtime="20180508 14:23:25.952" starttime="20180508 14:23:25.914"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:25.952" starttime="20180508 14:23:25.792"></status>
-</kw>
-<kw name="Limpar Campos De Entrada" library="SignInPage">
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<doc>Clears the value of text entry element identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_EMAIL}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:26.006" starttime="20180508 14:23:25.953"></status>
-</kw>
-<kw name="Clear Element Text" library="SeleniumLibrary">
-<doc>Clears the value of text entry element identified by ``locator``.</doc>
-<arguments>
-<arg>${SIGN_IN_PASSWORD}</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:26.034" starttime="20180508 14:23:26.007"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:26.034" starttime="20180508 14:23:25.953"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:26.035" starttime="20180508 14:23:22.466"></status>
-</kw>
-<kw type="teardown" name="End Web Test" library="Common">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180508 14:23:27.532" starttime="20180508 14:23:26.043"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:27.532" starttime="20180508 14:23:26.043"></status>
-</kw>
-<tags>
-<tag>Login</tag>
-</tags>
-<status status="PASS" endtime="20180508 14:23:27.533" critical="yes" starttime="20180508 14:23:01.471"></status>
-</test>
-<test id="s1-t3" name="Usuário não logado pode procurar produtos">
-<kw type="setup" name="Begin Web Test" library="Common">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:27.534" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20180508 14:23:32.170" starttime="20180508 14:23:27.534"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180508 14:23:32.304" starttime="20180508 14:23:32.170"></status>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the active browser instance to the provided ``url``.</doc>
-<arguments>
-<arg>${START_URL}</arg>
-</arguments>
-<msg timestamp="20180508 14:23:32.305" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
-<status status="PASS" endtime="20180508 14:23:37.762" starttime="20180508 14:23:32.304"></status>
-</kw>
-<kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Automation Practice Website</arg>
-</arguments>
-<status status="PASS" endtime="20180508 14:23:37.828" starttime="20180508 14:23:37.763"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20180508 14:23:37.840" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20180508 14:23:37.840" starttime="20180508 14:23:37.832"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:37.840" starttime="20180508 14:23:37.762"></status>
-</kw>
-<status status="PASS" endtime="20180508 14:23:37.840" starttime="20180508 14:23:27.533"></status>
+<status status="PASS" endtime="20180508 16:57:39.334" starttime="20180508 16:57:29.271"></status>
 </kw>
 <kw name="Procurar Produtos" library="MyStoreApp">
 <kw name="Procurar Produtos" library="SearchPage">
@@ -714,10 +54,10 @@
 <arg>${SEARCH_BAR}</arg>
 <arg>${SEARCH_TERM}</arg>
 </arguments>
-<msg timestamp="20180508 14:23:37.841" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
-<status status="PASS" endtime="20180508 14:23:38.001" starttime="20180508 14:23:37.841"></status>
+<msg timestamp="20180508 16:57:39.337" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
+<status status="PASS" endtime="20180508 16:57:39.421" starttime="20180508 16:57:39.337"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:38.001" starttime="20180508 14:23:37.841"></status>
+<status status="PASS" endtime="20180508 16:57:39.422" starttime="20180508 16:57:39.337"></status>
 </kw>
 <kw name="Submeter Busca" library="SearchPage">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -725,12 +65,12 @@
 <arguments>
 <arg>${SEARCH_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:23:38.001" level="INFO">Clicking button 'name=submit_search'.</msg>
-<status status="PASS" endtime="20180508 14:23:39.772" starttime="20180508 14:23:38.001"></status>
+<msg timestamp="20180508 16:57:39.422" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" endtime="20180508 16:57:41.305" starttime="20180508 16:57:39.422"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:39.773" starttime="20180508 14:23:38.001"></status>
+<status status="PASS" endtime="20180508 16:57:41.305" starttime="20180508 16:57:39.422"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:39.773" starttime="20180508 14:23:37.841"></status>
+<status status="PASS" endtime="20180508 16:57:41.306" starttime="20180508 16:57:39.337"></status>
 </kw>
 <kw name="Verificar &quot;Busca Completa&quot;" library="SearchResultsPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -738,22 +78,22 @@
 <arguments>
 <arg>Showing</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:23:39.927" starttime="20180508 14:23:39.773"></status>
+<status status="PASS" endtime="20180508 16:57:41.562" starttime="20180508 16:57:41.306"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:39.927" starttime="20180508 14:23:39.773"></status>
+<status status="PASS" endtime="20180508 16:57:41.562" starttime="20180508 16:57:41.306"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:39.927" starttime="20180508 14:23:37.841"></status>
+<status status="PASS" endtime="20180508 16:57:41.562" starttime="20180508 16:57:39.336"></status>
 </kw>
 <kw type="teardown" name="End Web Test" library="Common">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180508 14:23:41.322" starttime="20180508 14:23:39.931"></status>
+<status status="PASS" endtime="20180508 16:57:42.924" starttime="20180508 16:57:41.565"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:41.322" starttime="20180508 14:23:39.930"></status>
+<status status="PASS" endtime="20180508 16:57:42.924" starttime="20180508 16:57:41.564"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:41.323" critical="yes" starttime="20180508 14:23:27.533"></status>
+<status status="PASS" endtime="20180508 16:57:42.924" critical="yes" starttime="20180508 16:57:29.271"></status>
 </test>
-<test id="s1-t4" name="Usuário não logado pode visualizar produtos">
+<test id="s1-s1-t2" name="Usuário não logado pode visualizar produtos">
 <kw type="setup" name="Begin Web Test" library="Common">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -761,20 +101,20 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180508 14:23:41.326" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20180508 14:23:46.330" starttime="20180508 14:23:41.326"></status>
+<msg timestamp="20180508 16:57:42.929" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180508 16:57:47.469" starttime="20180508 16:57:42.929"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180508 14:23:46.454" starttime="20180508 14:23:46.330"></status>
+<status status="PASS" endtime="20180508 16:57:47.581" starttime="20180508 16:57:47.469"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>${START_URL}</arg>
 </arguments>
-<msg timestamp="20180508 14:23:46.454" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
-<status status="PASS" endtime="20180508 14:23:52.610" starttime="20180508 14:23:46.454"></status>
+<msg timestamp="20180508 16:57:47.581" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180508 16:57:52.541" starttime="20180508 16:57:47.581"></status>
 </kw>
 <kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -782,19 +122,19 @@
 <arguments>
 <arg>Automation Practice Website</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:23:52.677" starttime="20180508 14:23:52.610"></status>
+<status status="PASS" endtime="20180508 16:57:52.615" starttime="20180508 16:57:52.541"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20180508 14:23:52.686" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20180508 14:23:52.687" starttime="20180508 14:23:52.677"></status>
+<msg timestamp="20180508 16:57:52.626" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180508 16:57:52.626" starttime="20180508 16:57:52.616"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:52.687" starttime="20180508 14:23:52.610"></status>
+<status status="PASS" endtime="20180508 16:57:52.626" starttime="20180508 16:57:52.541"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:52.687" starttime="20180508 14:23:41.325"></status>
+<status status="PASS" endtime="20180508 16:57:52.626" starttime="20180508 16:57:42.929"></status>
 </kw>
 <kw name="Procurar Produtos" library="MyStoreApp">
 <kw name="Procurar Produtos" library="SearchPage">
@@ -805,10 +145,10 @@
 <arg>${SEARCH_BAR}</arg>
 <arg>${SEARCH_TERM}</arg>
 </arguments>
-<msg timestamp="20180508 14:23:52.695" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
-<status status="PASS" endtime="20180508 14:23:52.775" starttime="20180508 14:23:52.695"></status>
+<msg timestamp="20180508 16:57:52.628" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
+<status status="PASS" endtime="20180508 16:57:52.696" starttime="20180508 16:57:52.627"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:52.775" starttime="20180508 14:23:52.695"></status>
+<status status="PASS" endtime="20180508 16:57:52.696" starttime="20180508 16:57:52.627"></status>
 </kw>
 <kw name="Submeter Busca" library="SearchPage">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -816,12 +156,12 @@
 <arguments>
 <arg>${SEARCH_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:23:52.776" level="INFO">Clicking button 'name=submit_search'.</msg>
-<status status="PASS" endtime="20180508 14:23:54.663" starttime="20180508 14:23:52.776"></status>
+<msg timestamp="20180508 16:57:52.697" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" endtime="20180508 16:57:54.597" starttime="20180508 16:57:52.696"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:54.663" starttime="20180508 14:23:52.776"></status>
+<status status="PASS" endtime="20180508 16:57:54.597" starttime="20180508 16:57:52.696"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:54.663" starttime="20180508 14:23:52.695"></status>
+<status status="PASS" endtime="20180508 16:57:54.597" starttime="20180508 16:57:52.627"></status>
 </kw>
 <kw name="Verificar &quot;Busca Completa&quot;" library="SearchResultsPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -829,11 +169,11 @@
 <arguments>
 <arg>Showing</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:23:54.806" starttime="20180508 14:23:54.668"></status>
+<status status="PASS" endtime="20180508 16:57:54.800" starttime="20180508 16:57:54.597"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:54.806" starttime="20180508 14:23:54.667"></status>
+<status status="PASS" endtime="20180508 16:57:54.800" starttime="20180508 16:57:54.597"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:54.806" starttime="20180508 14:23:52.694"></status>
+<status status="PASS" endtime="20180508 16:57:54.801" starttime="20180508 16:57:52.627"></status>
 </kw>
 <kw name="Selecionar Produto No Resultado Da Busca" library="MyStoreApp">
 <kw name="Selecionar Produto" library="SearchResultsPage">
@@ -842,10 +182,10 @@
 <arguments>
 <arg>Printed Chiffon Dress</arg>
 </arguments>
-<msg timestamp="20180508 14:23:54.810" level="INFO">Clicking link 'Printed Chiffon Dress'.</msg>
-<status status="PASS" endtime="20180508 14:23:56.780" starttime="20180508 14:23:54.810"></status>
+<msg timestamp="20180508 16:57:54.818" level="INFO">Clicking link 'Printed Chiffon Dress'.</msg>
+<status status="PASS" endtime="20180508 16:57:56.833" starttime="20180508 16:57:54.807"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:56.782" starttime="20180508 14:23:54.809"></status>
+<status status="PASS" endtime="20180508 16:57:56.833" starttime="20180508 16:57:54.805"></status>
 </kw>
 <kw name="Verificar &quot;Página do Produto&quot; Carregada" library="ProductPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -853,22 +193,22 @@
 <arguments>
 <arg>Data sheet</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:23:56.913" starttime="20180508 14:23:56.788"></status>
+<status status="PASS" endtime="20180508 16:57:56.971" starttime="20180508 16:57:56.834"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:56.914" starttime="20180508 14:23:56.788"></status>
+<status status="PASS" endtime="20180508 16:57:56.971" starttime="20180508 16:57:56.834"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:56.914" starttime="20180508 14:23:54.809"></status>
+<status status="PASS" endtime="20180508 16:57:56.976" starttime="20180508 16:57:54.804"></status>
 </kw>
 <kw type="teardown" name="End Web Test" library="Common">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180508 14:23:58.331" starttime="20180508 14:23:56.918"></status>
+<status status="PASS" endtime="20180508 16:57:58.146" starttime="20180508 16:57:56.977"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:58.333" starttime="20180508 14:23:56.918"></status>
+<status status="PASS" endtime="20180508 16:57:58.146" starttime="20180508 16:57:56.976"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:23:58.336" critical="yes" starttime="20180508 14:23:41.324"></status>
+<status status="PASS" endtime="20180508 16:57:58.146" critical="yes" starttime="20180508 16:57:42.928"></status>
 </test>
-<test id="s1-t5" name="Usuário não logado pode incluir produtos no carrinho">
+<test id="s1-s1-t3" name="Usuário não logado pode incluir produtos no carrinho">
 <kw type="setup" name="Begin Web Test" library="Common">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -876,20 +216,20 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180508 14:23:58.348" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20180508 14:24:03.023" starttime="20180508 14:23:58.348"></status>
+<msg timestamp="20180508 16:57:58.148" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180508 16:58:02.666" starttime="20180508 16:57:58.147"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180508 14:24:03.166" starttime="20180508 14:24:03.024"></status>
+<status status="PASS" endtime="20180508 16:58:02.798" starttime="20180508 16:58:02.667"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>${START_URL}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:03.166" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
-<status status="PASS" endtime="20180508 14:24:08.525" starttime="20180508 14:24:03.166"></status>
+<msg timestamp="20180508 16:58:02.798" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180508 16:58:07.918" starttime="20180508 16:58:02.798"></status>
 </kw>
 <kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -897,19 +237,19 @@
 <arguments>
 <arg>Automation Practice Website</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:08.612" starttime="20180508 14:24:08.525"></status>
+<status status="PASS" endtime="20180508 16:58:07.979" starttime="20180508 16:58:07.919"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20180508 14:24:08.617" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20180508 14:24:08.617" starttime="20180508 14:24:08.612"></status>
+<msg timestamp="20180508 16:58:07.990" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180508 16:58:07.990" starttime="20180508 16:58:07.979"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:08.617" starttime="20180508 14:24:08.525"></status>
+<status status="PASS" endtime="20180508 16:58:07.994" starttime="20180508 16:58:07.919"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:08.618" starttime="20180508 14:23:58.347"></status>
+<status status="PASS" endtime="20180508 16:58:07.994" starttime="20180508 16:57:58.147"></status>
 </kw>
 <kw name="Procurar Produtos" library="MyStoreApp">
 <kw name="Procurar Produtos" library="SearchPage">
@@ -920,10 +260,10 @@
 <arg>${SEARCH_BAR}</arg>
 <arg>${SEARCH_TERM}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:08.621" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
-<status status="PASS" endtime="20180508 14:24:08.726" starttime="20180508 14:24:08.621"></status>
+<msg timestamp="20180508 16:58:08.005" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
+<status status="PASS" endtime="20180508 16:58:08.120" starttime="20180508 16:58:08.004"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:08.726" starttime="20180508 14:24:08.620"></status>
+<status status="PASS" endtime="20180508 16:58:08.120" starttime="20180508 16:58:07.995"></status>
 </kw>
 <kw name="Submeter Busca" library="SearchPage">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -931,12 +271,12 @@
 <arguments>
 <arg>${SEARCH_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:08.727" level="INFO">Clicking button 'name=submit_search'.</msg>
-<status status="PASS" endtime="20180508 14:24:10.838" starttime="20180508 14:24:08.726"></status>
+<msg timestamp="20180508 16:58:08.121" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" endtime="20180508 16:58:09.972" starttime="20180508 16:58:08.121"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:10.838" starttime="20180508 14:24:08.726"></status>
+<status status="PASS" endtime="20180508 16:58:09.972" starttime="20180508 16:58:08.120"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:10.838" starttime="20180508 14:24:08.620"></status>
+<status status="PASS" endtime="20180508 16:58:09.972" starttime="20180508 16:58:07.995"></status>
 </kw>
 <kw name="Verificar &quot;Busca Completa&quot;" library="SearchResultsPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -944,11 +284,11 @@
 <arguments>
 <arg>Showing</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:10.987" starttime="20180508 14:24:10.838"></status>
+<status status="PASS" endtime="20180508 16:58:10.197" starttime="20180508 16:58:09.973"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:10.987" starttime="20180508 14:24:10.838"></status>
+<status status="PASS" endtime="20180508 16:58:10.197" starttime="20180508 16:58:09.973"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:10.987" starttime="20180508 14:24:08.620"></status>
+<status status="PASS" endtime="20180508 16:58:10.197" starttime="20180508 16:58:07.995"></status>
 </kw>
 <kw name="Selecionar Produto No Resultado Da Busca" library="MyStoreApp">
 <kw name="Selecionar Produto" library="SearchResultsPage">
@@ -957,10 +297,10 @@
 <arguments>
 <arg>Printed Chiffon Dress</arg>
 </arguments>
-<msg timestamp="20180508 14:24:10.993" level="INFO">Clicking link 'Printed Chiffon Dress'.</msg>
-<status status="PASS" endtime="20180508 14:24:12.951" starttime="20180508 14:24:10.993"></status>
+<msg timestamp="20180508 16:58:10.201" level="INFO">Clicking link 'Printed Chiffon Dress'.</msg>
+<status status="PASS" endtime="20180508 16:58:12.221" starttime="20180508 16:58:10.200"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:12.951" starttime="20180508 14:24:10.992"></status>
+<status status="PASS" endtime="20180508 16:58:12.221" starttime="20180508 16:58:10.200"></status>
 </kw>
 <kw name="Verificar &quot;Página do Produto&quot; Carregada" library="ProductPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -968,11 +308,11 @@
 <arguments>
 <arg>Data sheet</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:13.088" starttime="20180508 14:24:12.951"></status>
+<status status="PASS" endtime="20180508 16:58:12.326" starttime="20180508 16:58:12.221"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:13.088" starttime="20180508 14:24:12.951"></status>
+<status status="PASS" endtime="20180508 16:58:12.327" starttime="20180508 16:58:12.221"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:13.088" starttime="20180508 14:24:10.992"></status>
+<status status="PASS" endtime="20180508 16:58:12.327" starttime="20180508 16:58:10.200"></status>
 </kw>
 <kw name="Adicionar Produto ao Carrinho" library="MyStoreApp">
 <kw name="Adicionar Ao Carrinho" library="ProductPage">
@@ -981,10 +321,10 @@
 <arguments>
 <arg>${ADD_TO_CART_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:13.089" level="INFO">Clicking button 'name=Submit'.</msg>
-<status status="PASS" endtime="20180508 14:24:13.410" starttime="20180508 14:24:13.089"></status>
+<msg timestamp="20180508 16:58:12.329" level="INFO">Clicking button 'name=Submit'.</msg>
+<status status="PASS" endtime="20180508 16:58:12.649" starttime="20180508 16:58:12.328"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:13.411" starttime="20180508 14:24:13.089"></status>
+<status status="PASS" endtime="20180508 16:58:12.649" starttime="20180508 16:58:12.328"></status>
 </kw>
 <kw name="Verificar Produto Adicionado" library="CartPage">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -992,29 +332,29 @@
 <arguments>
 <arg>${CART_INCLUSION_BOX}</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:13.935" starttime="20180508 14:24:13.411"></status>
+<status status="PASS" endtime="20180508 16:58:13.287" starttime="20180508 16:58:12.650"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>Product successfully added to your shopping cart</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:14.058" starttime="20180508 14:24:13.940"></status>
+<status status="PASS" endtime="20180508 16:58:13.333" starttime="20180508 16:58:13.287"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:14.058" starttime="20180508 14:24:13.411"></status>
+<status status="PASS" endtime="20180508 16:58:13.333" starttime="20180508 16:58:12.650"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:14.058" starttime="20180508 14:24:13.088"></status>
+<status status="PASS" endtime="20180508 16:58:13.333" starttime="20180508 16:58:12.328"></status>
 </kw>
 <kw type="teardown" name="End Web Test" library="Common">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180508 14:24:15.333" starttime="20180508 14:24:14.059"></status>
+<status status="PASS" endtime="20180508 16:58:14.525" starttime="20180508 16:58:13.340"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:15.333" starttime="20180508 14:24:14.058"></status>
+<status status="PASS" endtime="20180508 16:58:14.525" starttime="20180508 16:58:13.340"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:15.335" critical="yes" starttime="20180508 14:23:58.344"></status>
+<status status="PASS" endtime="20180508 16:58:14.525" critical="yes" starttime="20180508 16:57:58.147"></status>
 </test>
-<test id="s1-t6" name="Usuário não logado não pode finalizar check out">
+<test id="s1-s1-t4" name="Usuário não logado não pode finalizar check out">
 <kw type="setup" name="Begin Web Test" library="Common">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -1022,20 +362,20 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:15.336" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20180508 14:24:19.886" starttime="20180508 14:24:15.336"></status>
+<msg timestamp="20180508 16:58:14.526" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180508 16:58:18.795" starttime="20180508 16:58:14.526"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180508 14:24:20.009" starttime="20180508 14:24:19.886"></status>
+<status status="PASS" endtime="20180508 16:58:18.916" starttime="20180508 16:58:18.795"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>${START_URL}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:20.009" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
-<status status="PASS" endtime="20180508 14:24:25.213" starttime="20180508 14:24:20.009"></status>
+<msg timestamp="20180508 16:58:18.916" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180508 16:58:24.674" starttime="20180508 16:58:18.916"></status>
 </kw>
 <kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1043,19 +383,19 @@
 <arguments>
 <arg>Automation Practice Website</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:25.337" starttime="20180508 14:24:25.213"></status>
+<status status="PASS" endtime="20180508 16:58:24.733" starttime="20180508 16:58:24.675"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20180508 14:24:25.342" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20180508 14:24:25.342" starttime="20180508 14:24:25.337"></status>
+<msg timestamp="20180508 16:58:24.735" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180508 16:58:24.735" starttime="20180508 16:58:24.733"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:25.342" starttime="20180508 14:24:25.213"></status>
+<status status="PASS" endtime="20180508 16:58:24.736" starttime="20180508 16:58:24.674"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:25.342" starttime="20180508 14:24:15.336"></status>
+<status status="PASS" endtime="20180508 16:58:24.736" starttime="20180508 16:58:14.526"></status>
 </kw>
 <kw name="Procurar Produtos" library="MyStoreApp">
 <kw name="Procurar Produtos" library="SearchPage">
@@ -1066,10 +406,10 @@
 <arg>${SEARCH_BAR}</arg>
 <arg>${SEARCH_TERM}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:25.345" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
-<status status="PASS" endtime="20180508 14:24:25.502" starttime="20180508 14:24:25.345"></status>
+<msg timestamp="20180508 16:58:24.740" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
+<status status="PASS" endtime="20180508 16:58:24.845" starttime="20180508 16:58:24.740"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:25.502" starttime="20180508 14:24:25.344"></status>
+<status status="PASS" endtime="20180508 16:58:24.845" starttime="20180508 16:58:24.736"></status>
 </kw>
 <kw name="Submeter Busca" library="SearchPage">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -1077,12 +417,12 @@
 <arguments>
 <arg>${SEARCH_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:25.503" level="INFO">Clicking button 'name=submit_search'.</msg>
-<status status="PASS" endtime="20180508 14:24:27.934" starttime="20180508 14:24:25.503"></status>
+<msg timestamp="20180508 16:58:24.846" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" endtime="20180508 16:58:26.566" starttime="20180508 16:58:24.846"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:27.934" starttime="20180508 14:24:25.503"></status>
+<status status="PASS" endtime="20180508 16:58:26.566" starttime="20180508 16:58:24.846"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:27.934" starttime="20180508 14:24:25.344"></status>
+<status status="PASS" endtime="20180508 16:58:26.566" starttime="20180508 16:58:24.736"></status>
 </kw>
 <kw name="Verificar &quot;Busca Completa&quot;" library="SearchResultsPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1090,11 +430,11 @@
 <arguments>
 <arg>Showing</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:28.080" starttime="20180508 14:24:27.936"></status>
+<status status="PASS" endtime="20180508 16:58:26.767" starttime="20180508 16:58:26.567"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:28.080" starttime="20180508 14:24:27.934"></status>
+<status status="PASS" endtime="20180508 16:58:26.768" starttime="20180508 16:58:26.566"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:28.080" starttime="20180508 14:24:25.344"></status>
+<status status="PASS" endtime="20180508 16:58:26.768" starttime="20180508 16:58:24.736"></status>
 </kw>
 <kw name="Selecionar Produto No Resultado Da Busca" library="MyStoreApp">
 <kw name="Selecionar Produto" library="SearchResultsPage">
@@ -1103,10 +443,10 @@
 <arguments>
 <arg>Printed Chiffon Dress</arg>
 </arguments>
-<msg timestamp="20180508 14:24:28.081" level="INFO">Clicking link 'Printed Chiffon Dress'.</msg>
-<status status="PASS" endtime="20180508 14:24:30.053" starttime="20180508 14:24:28.081"></status>
+<msg timestamp="20180508 16:58:26.773" level="INFO">Clicking link 'Printed Chiffon Dress'.</msg>
+<status status="PASS" endtime="20180508 16:58:28.903" starttime="20180508 16:58:26.773"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:30.054" starttime="20180508 14:24:28.081"></status>
+<status status="PASS" endtime="20180508 16:58:28.903" starttime="20180508 16:58:26.773"></status>
 </kw>
 <kw name="Verificar &quot;Página do Produto&quot; Carregada" library="ProductPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1114,11 +454,11 @@
 <arguments>
 <arg>Data sheet</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:30.150" starttime="20180508 14:24:30.054"></status>
+<status status="PASS" endtime="20180508 16:58:29.038" starttime="20180508 16:58:28.903"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:30.150" starttime="20180508 14:24:30.054"></status>
+<status status="PASS" endtime="20180508 16:58:29.038" starttime="20180508 16:58:28.903"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:30.150" starttime="20180508 14:24:28.081"></status>
+<status status="PASS" endtime="20180508 16:58:29.038" starttime="20180508 16:58:26.772"></status>
 </kw>
 <kw name="Adicionar Produto ao Carrinho" library="MyStoreApp">
 <kw name="Adicionar Ao Carrinho" library="ProductPage">
@@ -1127,10 +467,10 @@
 <arguments>
 <arg>${ADD_TO_CART_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:30.153" level="INFO">Clicking button 'name=Submit'.</msg>
-<status status="PASS" endtime="20180508 14:24:30.461" starttime="20180508 14:24:30.153"></status>
+<msg timestamp="20180508 16:58:29.041" level="INFO">Clicking button 'name=Submit'.</msg>
+<status status="PASS" endtime="20180508 16:58:29.368" starttime="20180508 16:58:29.040"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:30.461" starttime="20180508 14:24:30.153"></status>
+<status status="PASS" endtime="20180508 16:58:29.369" starttime="20180508 16:58:29.040"></status>
 </kw>
 <kw name="Verificar Produto Adicionado" library="CartPage">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -1138,18 +478,18 @@
 <arguments>
 <arg>${CART_INCLUSION_BOX}</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:31.120" starttime="20180508 14:24:30.461"></status>
+<status status="PASS" endtime="20180508 16:58:29.959" starttime="20180508 16:58:29.369"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>Product successfully added to your shopping cart</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:31.207" starttime="20180508 14:24:31.120"></status>
+<status status="PASS" endtime="20180508 16:58:30.025" starttime="20180508 16:58:29.959"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:31.207" starttime="20180508 14:24:30.461"></status>
+<status status="PASS" endtime="20180508 16:58:30.025" starttime="20180508 16:58:29.369"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:31.207" starttime="20180508 14:24:30.153"></status>
+<status status="PASS" endtime="20180508 16:58:30.025" starttime="20180508 16:58:29.040"></status>
 </kw>
 <kw name="Fazer Checkout Não Logado" library="MyStoreApp">
 <kw name="Iniciar Checkout" library="CartPage">
@@ -1158,24 +498,24 @@
 <arguments>
 <arg>${PROCEED_TO_CHECKOUT_FIRST_BUTTON}</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:31.365" starttime="20180508 14:24:31.209"></status>
+<status status="PASS" endtime="20180508 16:58:30.142" starttime="20180508 16:58:30.027"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>${PROCEED_TO_CHECKOUT_FIRST_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:31.366" level="INFO">Clicking link 'xpath=//div[@id='layer_cart']//a[@title='Proceed to checkout']'.</msg>
-<status status="PASS" endtime="20180508 14:24:32.949" starttime="20180508 14:24:31.365"></status>
+<msg timestamp="20180508 16:58:30.143" level="INFO">Clicking link 'xpath=//div[@id='layer_cart']//a[@title='Proceed to checkout']'.</msg>
+<status status="PASS" endtime="20180508 16:58:31.848" starttime="20180508 16:58:30.143"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>Shopping-cart summary</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:33.016" starttime="20180508 14:24:32.949"></status>
+<status status="PASS" endtime="20180508 16:58:31.943" starttime="20180508 16:58:31.850"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:33.016" starttime="20180508 14:24:31.208"></status>
+<status status="PASS" endtime="20180508 16:58:31.943" starttime="20180508 16:58:30.027"></status>
 </kw>
 <kw name="Proceder ao Checkout" library="CartPage">
 <kw name="Execute Javascript" library="SeleniumLibrary">
@@ -1183,17 +523,17 @@
 <arguments>
 <arg>window.scrollTo(0, document.body.scrollHeight)</arg>
 </arguments>
-<msg timestamp="20180508 14:24:33.017" level="INFO">Executing JavaScript:
+<msg timestamp="20180508 16:58:31.944" level="INFO">Executing JavaScript:
 window.scrollTo(0, document.body.scrollHeight)</msg>
-<status status="PASS" endtime="20180508 14:24:33.030" starttime="20180508 14:24:33.017"></status>
+<status status="PASS" endtime="20180508 16:58:31.959" starttime="20180508 16:58:31.943"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>${PROCEED_TO_CHECKOUT_SECOND_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:33.031" level="INFO">Clicking link 'class : standard-checkout'.</msg>
-<status status="PASS" endtime="20180508 14:24:35.003" starttime="20180508 14:24:33.031"></status>
+<msg timestamp="20180508 16:58:31.960" level="INFO">Clicking link 'class : standard-checkout'.</msg>
+<status status="PASS" endtime="20180508 16:58:34.196" starttime="20180508 16:58:31.960"></status>
 </kw>
 <kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1201,11 +541,11 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Authentication</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:35.065" starttime="20180508 14:24:35.013"></status>
+<status status="PASS" endtime="20180508 16:58:34.254" starttime="20180508 16:58:34.198"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:35.066" starttime="20180508 14:24:35.004"></status>
+<status status="PASS" endtime="20180508 16:58:34.254" starttime="20180508 16:58:34.197"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:35.066" starttime="20180508 14:24:33.016"></status>
+<status status="PASS" endtime="20180508 16:58:34.254" starttime="20180508 16:58:31.943"></status>
 </kw>
 <kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1213,25 +553,25 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Authentication</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:35.116" starttime="20180508 14:24:35.066"></status>
+<status status="PASS" endtime="20180508 16:58:34.277" starttime="20180508 16:58:34.255"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:35.117" starttime="20180508 14:24:35.066"></status>
+<status status="PASS" endtime="20180508 16:58:34.277" starttime="20180508 16:58:34.254"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:35.117" starttime="20180508 14:24:31.208"></status>
+<status status="PASS" endtime="20180508 16:58:34.278" starttime="20180508 16:58:30.027"></status>
 </kw>
 <kw type="teardown" name="End Web Test" library="Common">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180508 14:24:36.300" starttime="20180508 14:24:35.117"></status>
+<status status="PASS" endtime="20180508 16:58:35.377" starttime="20180508 16:58:34.278"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:36.300" starttime="20180508 14:24:35.117"></status>
+<status status="PASS" endtime="20180508 16:58:35.377" starttime="20180508 16:58:34.278"></status>
 </kw>
 <tags>
 <tag>Debug</tag>
 </tags>
-<status status="PASS" endtime="20180508 14:24:36.300" critical="yes" starttime="20180508 14:24:15.335"></status>
+<status status="PASS" endtime="20180508 16:58:35.377" critical="yes" starttime="20180508 16:58:14.525"></status>
 </test>
-<test id="s1-t7" name="Usuário logado pode fazer check out">
+<test id="s1-s1-t5" name="Usuário logado pode fazer check out">
 <kw type="setup" name="Begin Web Test" library="Common">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -1239,20 +579,20 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:36.302" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20180508 14:24:40.836" starttime="20180508 14:24:36.301"></status>
+<msg timestamp="20180508 16:58:35.379" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180508 16:58:39.873" starttime="20180508 16:58:35.379"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180508 14:24:40.961" starttime="20180508 14:24:40.836"></status>
+<status status="PASS" endtime="20180508 16:58:39.958" starttime="20180508 16:58:39.873"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>${START_URL}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:40.961" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
-<status status="PASS" endtime="20180508 14:24:46.194" starttime="20180508 14:24:40.961"></status>
+<msg timestamp="20180508 16:58:39.959" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180508 16:58:47.418" starttime="20180508 16:58:39.958"></status>
 </kw>
 <kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1260,19 +600,19 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Automation Practice Website</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:46.266" starttime="20180508 14:24:46.194"></status>
+<status status="PASS" endtime="20180508 16:58:47.499" starttime="20180508 16:58:47.419"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20180508 14:24:46.272" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20180508 14:24:46.272" starttime="20180508 14:24:46.266"></status>
+<msg timestamp="20180508 16:58:47.506" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180508 16:58:47.506" starttime="20180508 16:58:47.499"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:46.273" starttime="20180508 14:24:46.194"></status>
+<status status="PASS" endtime="20180508 16:58:47.506" starttime="20180508 16:58:47.418"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:46.273" starttime="20180508 14:24:36.301"></status>
+<status status="PASS" endtime="20180508 16:58:47.507" starttime="20180508 16:58:35.378"></status>
 </kw>
 <kw name="Procurar Produtos" library="MyStoreApp">
 <kw name="Procurar Produtos" library="SearchPage">
@@ -1283,10 +623,10 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arg>${SEARCH_BAR}</arg>
 <arg>${SEARCH_TERM}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:46.274" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
-<status status="PASS" endtime="20180508 14:24:46.441" starttime="20180508 14:24:46.274"></status>
+<msg timestamp="20180508 16:58:47.509" level="INFO">Typing text 'summer dresses' into text field 'id=search_query_top'.</msg>
+<status status="PASS" endtime="20180508 16:58:47.683" starttime="20180508 16:58:47.509"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:46.441" starttime="20180508 14:24:46.274"></status>
+<status status="PASS" endtime="20180508 16:58:47.683" starttime="20180508 16:58:47.508"></status>
 </kw>
 <kw name="Submeter Busca" library="SearchPage">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -1294,12 +634,12 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>${SEARCH_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:46.442" level="INFO">Clicking button 'name=submit_search'.</msg>
-<status status="PASS" endtime="20180508 14:24:48.678" starttime="20180508 14:24:46.442"></status>
+<msg timestamp="20180508 16:58:47.689" level="INFO">Clicking button 'name=submit_search'.</msg>
+<status status="PASS" endtime="20180508 16:58:50.007" starttime="20180508 16:58:47.688"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:48.678" starttime="20180508 14:24:46.441"></status>
+<status status="PASS" endtime="20180508 16:58:50.007" starttime="20180508 16:58:47.688"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:48.678" starttime="20180508 14:24:46.273"></status>
+<status status="PASS" endtime="20180508 16:58:50.007" starttime="20180508 16:58:47.508"></status>
 </kw>
 <kw name="Verificar &quot;Busca Completa&quot;" library="SearchResultsPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1307,11 +647,11 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Showing</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:48.832" starttime="20180508 14:24:48.678"></status>
+<status status="PASS" endtime="20180508 16:58:50.134" starttime="20180508 16:58:50.007"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:48.836" starttime="20180508 14:24:48.678"></status>
+<status status="PASS" endtime="20180508 16:58:50.135" starttime="20180508 16:58:50.007"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:48.836" starttime="20180508 14:24:46.273"></status>
+<status status="PASS" endtime="20180508 16:58:50.135" starttime="20180508 16:58:47.508"></status>
 </kw>
 <kw name="Selecionar Produto No Resultado Da Busca" library="MyStoreApp">
 <kw name="Selecionar Produto" library="SearchResultsPage">
@@ -1320,10 +660,10 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Printed Chiffon Dress</arg>
 </arguments>
-<msg timestamp="20180508 14:24:48.837" level="INFO">Clicking link 'Printed Chiffon Dress'.</msg>
-<status status="PASS" endtime="20180508 14:24:50.855" starttime="20180508 14:24:48.837"></status>
+<msg timestamp="20180508 16:58:50.136" level="INFO">Clicking link 'Printed Chiffon Dress'.</msg>
+<status status="PASS" endtime="20180508 16:58:52.238" starttime="20180508 16:58:50.135"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:50.855" starttime="20180508 14:24:48.837"></status>
+<status status="PASS" endtime="20180508 16:58:52.244" starttime="20180508 16:58:50.135"></status>
 </kw>
 <kw name="Verificar &quot;Página do Produto&quot; Carregada" library="ProductPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1331,11 +671,11 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Data sheet</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:50.953" starttime="20180508 14:24:50.855"></status>
+<status status="PASS" endtime="20180508 16:58:52.359" starttime="20180508 16:58:52.245"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:50.954" starttime="20180508 14:24:50.855"></status>
+<status status="PASS" endtime="20180508 16:58:52.359" starttime="20180508 16:58:52.245"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:50.954" starttime="20180508 14:24:48.836"></status>
+<status status="PASS" endtime="20180508 16:58:52.359" starttime="20180508 16:58:50.135"></status>
 </kw>
 <kw name="Adicionar Produto ao Carrinho" library="MyStoreApp">
 <kw name="Adicionar Ao Carrinho" library="ProductPage">
@@ -1344,10 +684,10 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>${ADD_TO_CART_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:50.955" level="INFO">Clicking button 'name=Submit'.</msg>
-<status status="PASS" endtime="20180508 14:24:51.280" starttime="20180508 14:24:50.954"></status>
+<msg timestamp="20180508 16:58:52.360" level="INFO">Clicking button 'name=Submit'.</msg>
+<status status="PASS" endtime="20180508 16:58:52.695" starttime="20180508 16:58:52.360"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:51.280" starttime="20180508 14:24:50.954"></status>
+<status status="PASS" endtime="20180508 16:58:52.700" starttime="20180508 16:58:52.360"></status>
 </kw>
 <kw name="Verificar Produto Adicionado" library="CartPage">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -1355,18 +695,18 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>${CART_INCLUSION_BOX}</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:52.065" starttime="20180508 14:24:51.281"></status>
+<status status="PASS" endtime="20180508 16:58:53.273" starttime="20180508 16:58:52.700"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>Product successfully added to your shopping cart</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:52.162" starttime="20180508 14:24:52.065"></status>
+<status status="PASS" endtime="20180508 16:58:53.329" starttime="20180508 16:58:53.273"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:52.163" starttime="20180508 14:24:51.281"></status>
+<status status="PASS" endtime="20180508 16:58:53.329" starttime="20180508 16:58:52.700"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:52.163" starttime="20180508 14:24:50.954"></status>
+<status status="PASS" endtime="20180508 16:58:53.329" starttime="20180508 16:58:52.360"></status>
 </kw>
 <kw name="Fazer Checkout Logado" library="MyStoreApp">
 <arguments>
@@ -1378,24 +718,24 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>${PROCEED_TO_CHECKOUT_FIRST_BUTTON}</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:52.262" starttime="20180508 14:24:52.163"></status>
+<status status="PASS" endtime="20180508 16:58:53.452" starttime="20180508 16:58:53.330"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>${PROCEED_TO_CHECKOUT_FIRST_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:52.263" level="INFO">Clicking link 'xpath=//div[@id='layer_cart']//a[@title='Proceed to checkout']'.</msg>
-<status status="PASS" endtime="20180508 14:24:54.017" starttime="20180508 14:24:52.262"></status>
+<msg timestamp="20180508 16:58:53.453" level="INFO">Clicking link 'xpath=//div[@id='layer_cart']//a[@title='Proceed to checkout']'.</msg>
+<status status="PASS" endtime="20180508 16:58:55.177" starttime="20180508 16:58:53.452"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>Shopping-cart summary</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:54.126" starttime="20180508 14:24:54.017"></status>
+<status status="PASS" endtime="20180508 16:58:55.227" starttime="20180508 16:58:55.177"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:54.126" starttime="20180508 14:24:52.163"></status>
+<status status="PASS" endtime="20180508 16:58:55.227" starttime="20180508 16:58:53.330"></status>
 </kw>
 <kw name="Proceder ao Checkout" library="CartPage">
 <kw name="Execute Javascript" library="SeleniumLibrary">
@@ -1403,17 +743,17 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>window.scrollTo(0, document.body.scrollHeight)</arg>
 </arguments>
-<msg timestamp="20180508 14:24:54.127" level="INFO">Executing JavaScript:
+<msg timestamp="20180508 16:58:55.228" level="INFO">Executing JavaScript:
 window.scrollTo(0, document.body.scrollHeight)</msg>
-<status status="PASS" endtime="20180508 14:24:54.147" starttime="20180508 14:24:54.127"></status>
+<status status="PASS" endtime="20180508 16:58:55.251" starttime="20180508 16:58:55.227"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>${PROCEED_TO_CHECKOUT_SECOND_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:54.148" level="INFO">Clicking link 'class : standard-checkout'.</msg>
-<status status="PASS" endtime="20180508 14:24:56.190" starttime="20180508 14:24:54.147"></status>
+<msg timestamp="20180508 16:58:55.252" level="INFO">Clicking link 'class : standard-checkout'.</msg>
+<status status="PASS" endtime="20180508 16:58:57.358" starttime="20180508 16:58:55.252"></status>
 </kw>
 <kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1421,11 +761,11 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Authentication</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:56.282" starttime="20180508 14:24:56.191"></status>
+<status status="PASS" endtime="20180508 16:58:57.442" starttime="20180508 16:58:57.358"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:56.283" starttime="20180508 14:24:56.190"></status>
+<status status="PASS" endtime="20180508 16:58:57.442" starttime="20180508 16:58:57.358"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:56.283" starttime="20180508 14:24:54.126"></status>
+<status status="PASS" endtime="20180508 16:58:57.443" starttime="20180508 16:58:55.227"></status>
 </kw>
 <kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1433,9 +773,9 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Authentication</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:56.306" starttime="20180508 14:24:56.283"></status>
+<status status="PASS" endtime="20180508 16:58:57.460" starttime="20180508 16:58:57.443"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:56.307" starttime="20180508 14:24:56.283"></status>
+<status status="PASS" endtime="20180508 16:58:57.460" starttime="20180508 16:58:57.443"></status>
 </kw>
 <kw name="Entrar Credenciais" library="SignInPage">
 <arguments>
@@ -1455,10 +795,10 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arg>${SIGN_IN_EMAIL}</arg>
 <arg>${Credentials.Email}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:56.313" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
-<status status="PASS" endtime="20180508 14:24:56.424" starttime="20180508 14:24:56.313"></status>
+<msg timestamp="20180508 16:58:57.461" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20180508 16:58:57.569" starttime="20180508 16:58:57.461"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:56.424" starttime="20180508 14:24:56.313"></status>
+<status status="PASS" endtime="20180508 16:58:57.569" starttime="20180508 16:58:57.461"></status>
 </kw>
 <kw name="Run Keyword Unless" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
@@ -1474,20 +814,20 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arg>${SIGN_IN_PASSWORD}</arg>
 <arg>${Credentials.Password}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:56.425" level="INFO">Typing text 'teste' into text field 'id=passwd'.</msg>
-<status status="PASS" endtime="20180508 14:24:56.569" starttime="20180508 14:24:56.425"></status>
+<msg timestamp="20180508 16:58:57.570" level="INFO">Typing text 'teste' into text field 'id=passwd'.</msg>
+<status status="PASS" endtime="20180508 16:58:57.669" starttime="20180508 16:58:57.570"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:56.569" starttime="20180508 14:24:56.424"></status>
+<status status="PASS" endtime="20180508 16:58:57.669" starttime="20180508 16:58:57.569"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${LOGIN_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:56.569" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
-<status status="PASS" endtime="20180508 14:24:59.197" starttime="20180508 14:24:56.569"></status>
+<msg timestamp="20180508 16:58:57.670" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 16:58:59.971" starttime="20180508 16:58:57.670"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:24:59.197" starttime="20180508 14:24:56.307"></status>
+<status status="PASS" endtime="20180508 16:58:59.971" starttime="20180508 16:58:57.460"></status>
 </kw>
 <kw name="Confirmar &quot;Endereço&quot;" library="AddressPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1495,17 +835,17 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Addresses</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:24:59.307" starttime="20180508 14:24:59.198"></status>
+<status status="PASS" endtime="20180508 16:59:00.118" starttime="20180508 16:58:59.971"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${PROCEED_TO_CHECKOUT_THIRD_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:24:59.308" level="INFO">Clicking element 'name : processAddress'.</msg>
-<status status="PASS" endtime="20180508 14:25:00.923" starttime="20180508 14:24:59.307"></status>
+<msg timestamp="20180508 16:59:00.119" level="INFO">Clicking element 'name : processAddress'.</msg>
+<status status="PASS" endtime="20180508 16:59:01.562" starttime="20180508 16:59:00.118"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:25:00.923" starttime="20180508 14:24:59.197"></status>
+<status status="PASS" endtime="20180508 16:59:01.562" starttime="20180508 16:58:59.971"></status>
 </kw>
 <kw name="Aceite Aos &quot;Termos De Serviço&quot;" library="ShippingPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1513,25 +853,25 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Shipping</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:25:01.036" starttime="20180508 14:25:00.924"></status>
+<status status="PASS" endtime="20180508 16:59:01.662" starttime="20180508 16:59:01.562"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${CHECK_BOX_AGREEMENT}</arg>
 </arguments>
-<msg timestamp="20180508 14:25:01.037" level="INFO">Clicking element 'id=cgv'.</msg>
-<status status="PASS" endtime="20180508 14:25:01.379" starttime="20180508 14:25:01.037"></status>
+<msg timestamp="20180508 16:59:01.663" level="INFO">Clicking element 'id=cgv'.</msg>
+<status status="PASS" endtime="20180508 16:59:01.970" starttime="20180508 16:59:01.662"></status>
 </kw>
 <kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
 <doc>Verifies checkbox ``locator`` is selected/checked.</doc>
 <arguments>
 <arg>${CHECK_BOX_AGREEMENT}</arg>
 </arguments>
-<msg timestamp="20180508 14:25:01.379" level="INFO">Verifying checkbox 'id=cgv' is selected.</msg>
-<status status="PASS" endtime="20180508 14:25:01.430" starttime="20180508 14:25:01.379"></status>
+<msg timestamp="20180508 16:59:01.970" level="INFO">Verifying checkbox 'id=cgv' is selected.</msg>
+<status status="PASS" endtime="20180508 16:59:01.993" starttime="20180508 16:59:01.970"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:25:01.430" starttime="20180508 14:25:00.923"></status>
+<status status="PASS" endtime="20180508 16:59:01.994" starttime="20180508 16:59:01.562"></status>
 </kw>
 <kw name="Continuar Checkout" library="ShippingPage">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -1539,10 +879,10 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>${PROCEED_TO_CHECKOUT_FOURTH_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:25:01.432" level="INFO">Clicking button 'name : processCarrier'.</msg>
-<status status="PASS" endtime="20180508 14:25:03.120" starttime="20180508 14:25:01.432"></status>
+<msg timestamp="20180508 16:59:01.997" level="INFO">Clicking button 'name : processCarrier'.</msg>
+<status status="PASS" endtime="20180508 16:59:03.172" starttime="20180508 16:59:01.997"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:25:03.120" starttime="20180508 14:25:01.431"></status>
+<status status="PASS" endtime="20180508 16:59:03.176" starttime="20180508 16:59:01.996"></status>
 </kw>
 <kw name="Select &quot;Payment&quot; Method" library="PaymentPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1550,17 +890,17 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Please choose your payment method</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:25:03.244" starttime="20180508 14:25:03.123"></status>
+<status status="PASS" endtime="20180508 16:59:03.277" starttime="20180508 16:59:03.179"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>Pay by bank wire</arg>
 </arguments>
-<msg timestamp="20180508 14:25:03.245" level="INFO">Clicking link 'Pay by bank wire'.</msg>
-<status status="PASS" endtime="20180508 14:25:04.514" starttime="20180508 14:25:03.245"></status>
+<msg timestamp="20180508 16:59:03.278" level="INFO">Clicking link 'Pay by bank wire'.</msg>
+<status status="PASS" endtime="20180508 16:59:04.683" starttime="20180508 16:59:03.277"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:25:04.514" starttime="20180508 14:25:03.123"></status>
+<status status="PASS" endtime="20180508 16:59:04.684" starttime="20180508 16:59:03.176"></status>
 </kw>
 <kw name="Confirmar &quot;Ordem&quot;" library="OrderSummaryPage">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -1568,62 +908,1466 @@ window.scrollTo(0, document.body.scrollHeight)</msg>
 <arguments>
 <arg>Order summary</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:25:04.621" starttime="20180508 14:25:04.515"></status>
+<status status="PASS" endtime="20180508 16:59:04.764" starttime="20180508 16:59:04.685"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${SUBMIT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20180508 14:25:04.622" level="INFO">Clicking button '//button[span='I confirm my order']'.</msg>
-<status status="PASS" endtime="20180508 14:25:06.527" starttime="20180508 14:25:04.622"></status>
+<msg timestamp="20180508 16:59:04.765" level="INFO">Clicking button '//button[span='I confirm my order']'.</msg>
+<status status="PASS" endtime="20180508 16:59:07.161" starttime="20180508 16:59:04.765"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on current page.</doc>
 <arguments>
 <arg>Order confirmation</arg>
 </arguments>
-<status status="PASS" endtime="20180508 14:25:06.622" starttime="20180508 14:25:06.527"></status>
+<status status="PASS" endtime="20180508 16:59:07.253" starttime="20180508 16:59:07.162"></status>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>Your order on My Store is complete.</arg>
 </arguments>
-<msg timestamp="20180508 14:25:06.659" level="INFO">Current page contains text 'Your order on My Store is complete.'.</msg>
-<status status="PASS" endtime="20180508 14:25:06.659" starttime="20180508 14:25:06.622"></status>
+<msg timestamp="20180508 16:59:07.277" level="INFO">Current page contains text 'Your order on My Store is complete.'.</msg>
+<status status="PASS" endtime="20180508 16:59:07.278" starttime="20180508 16:59:07.253"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:25:06.659" starttime="20180508 14:25:04.514"></status>
+<status status="PASS" endtime="20180508 16:59:07.278" starttime="20180508 16:59:04.685"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:25:06.660" starttime="20180508 14:24:52.163"></status>
+<status status="PASS" endtime="20180508 16:59:07.278" starttime="20180508 16:58:53.329"></status>
 </kw>
 <kw type="teardown" name="End Web Test" library="Common">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180508 14:25:07.845" starttime="20180508 14:25:06.660"></status>
+<status status="PASS" endtime="20180508 16:59:08.541" starttime="20180508 16:59:07.281"></status>
 </kw>
-<status status="PASS" endtime="20180508 14:25:07.845" starttime="20180508 14:25:06.660"></status>
+<status status="PASS" endtime="20180508 16:59:08.541" starttime="20180508 16:59:07.281"></status>
 </kw>
 <tags>
 <tag>Regression</tag>
 </tags>
-<status status="PASS" endtime="20180508 14:25:07.845" critical="yes" starttime="20180508 14:24:36.301"></status>
+<status status="PASS" endtime="20180508 16:59:08.542" critical="yes" starttime="20180508 16:58:35.378"></status>
 </test>
-<doc>Esta suite representa os testes do DEMOCENTER para a aplicação web MyStore</doc>
-<status status="PASS" endtime="20180508 14:25:07.846" starttime="20180508 14:22:44.726"></status>
+<doc>Esta suite representa os testes do carrinho do DEMOCENTER para a aplicação web MyStore</doc>
+<status status="PASS" endtime="20180508 16:59:08.542" starttime="20180508 16:57:29.076"></status>
+</suite>
+<suite source="/home/estanqueiro/projects/mystore/Tests/DataDrivenLogin.robot" id="s1-s2" name="DataDrivenLogin">
+<test id="s1-s2-t1" name="Tentativa de login deve apresentar mensagem de erro correta">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:08.570" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180508 16:59:12.900" starttime="20180508 16:59:08.570"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180508 16:59:13.007" starttime="20180508 16:59:12.900"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:13.007" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180508 16:59:20.765" starttime="20180508 16:59:13.007"></status>
+</kw>
+<kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Automation Practice Website</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:20.875" starttime="20180508 16:59:20.765"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20180508 16:59:20.882" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180508 16:59:20.883" starttime="20180508 16:59:20.875"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:20.883" starttime="20180508 16:59:20.765"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:20.883" starttime="20180508 16:59:08.570"></status>
+</kw>
+<kw name="Get CSV Data" library="DataManager">
+<arguments>
+<arg>${INVALID_CREDENTIALS_PATH_CSV}</arg>
+</arguments>
+<assign>
+<var>${InvalidLoginScenarios}</var>
+</assign>
+<kw name="Read Csv File" library="Csv">
+<arguments>
+<arg>${FilePath}</arg>
+</arguments>
+<assign>
+<var>${Data}</var>
+</assign>
+<msg timestamp="20180508 16:59:20.884" level="INFO">${Data} = [['paulo@test.com', 'teste', 'Authentication failed.'], ['paulo@test.com.br', 'abc', 'Invalid password.'], ['#BLANK', '#BLANK', 'An email address required.'], ['paulo@test.com.br', '#BLANK', 'Password...</msg>
+<status status="PASS" endtime="20180508 16:59:20.884" starttime="20180508 16:59:20.883"></status>
+</kw>
+<msg timestamp="20180508 16:59:20.889" level="INFO">${InvalidLoginScenarios} = [['paulo@test.com', 'teste', 'Authentication failed.'], ['paulo@test.com.br', 'abc', 'Invalid password.'], ['#BLANK', '#BLANK', 'An email address required.'], ['paulo@test.com.br', '#BLANK', 'Password...</msg>
+<status status="PASS" endtime="20180508 16:59:20.889" starttime="20180508 16:59:20.883"></status>
+</kw>
+<kw name="Tentativa De Login Com Múltiplos Cenários Inválidos" library="MyStoreApp">
+<arguments>
+<arg>${InvalidLoginScenarios}</arg>
+</arguments>
+<kw type="for" name="${LoginScenario} IN [ @{InvalidLoginScenarios} ]">
+<kw type="foritem" name="${LoginScenario} = ['paulo@test.com', 'teste', 'Authentication failed.']">
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 16:59:20.895" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 16:59:23.130" starttime="20180508 16:59:20.895"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:23.202" starttime="20180508 16:59:23.131"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:23.202" starttime="20180508 16:59:23.130"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:23.202" starttime="20180508 16:59:20.895"></status>
+</kw>
+<kw name="Tentativa De Login" library="SignInPage">
+<arguments>
+<arg>${LoginScenario}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${USER_DATA}' == 'builtin'</arg>
+<arg>Entrar Credenciais</arg>
+<arg>${Credentials}</arg>
+<arg>ELSE</arg>
+<arg>Entrar Credenciais DataDriven</arg>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Entrar Credenciais DataDriven" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[0]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:23.210" level="INFO">Typing text 'paulo@test.com' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20180508 16:59:23.319" starttime="20180508 16:59:23.209"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:23.319" starttime="20180508 16:59:23.209"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[1]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:23.320" level="INFO">Typing text 'teste' into text field 'id=passwd'.</msg>
+<status status="PASS" endtime="20180508 16:59:23.442" starttime="20180508 16:59:23.320"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:23.442" starttime="20180508 16:59:23.319"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:23.442" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 16:59:25.034" starttime="20180508 16:59:23.442"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:25.035" starttime="20180508 16:59:23.209"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:25.035" starttime="20180508 16:59:23.208"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:25.035" starttime="20180508 16:59:23.203"></status>
+</kw>
+<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
+<arguments>
+<arg>${LoginScenario}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${ALERT_BOX}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:25.142" starttime="20180508 16:59:25.035"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'USER_DATA' == 'builtin'</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage}</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:25.178" level="INFO">Current page contains text 'Authentication failed.'.</msg>
+<status status="PASS" endtime="20180508 16:59:25.178" starttime="20180508 16:59:25.142"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:25.178" starttime="20180508 16:59:25.142"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:25.178" starttime="20180508 16:59:25.035"></status>
+</kw>
+<kw name="Limpar Campos De Entrada" library="SignInPage">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:25.220" starttime="20180508 16:59:25.179"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:25.272" starttime="20180508 16:59:25.220"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:25.272" starttime="20180508 16:59:25.179"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:25.272" starttime="20180508 16:59:20.895"></status>
+</kw>
+<kw type="foritem" name="${LoginScenario} = ['paulo@test.com.br', 'abc', 'Invalid password.']">
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 16:59:25.277" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 16:59:27.013" starttime="20180508 16:59:25.276"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:27.087" starttime="20180508 16:59:27.013"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:27.088" starttime="20180508 16:59:27.013"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:27.088" starttime="20180508 16:59:25.276"></status>
+</kw>
+<kw name="Tentativa De Login" library="SignInPage">
+<arguments>
+<arg>${LoginScenario}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${USER_DATA}' == 'builtin'</arg>
+<arg>Entrar Credenciais</arg>
+<arg>${Credentials}</arg>
+<arg>ELSE</arg>
+<arg>Entrar Credenciais DataDriven</arg>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Entrar Credenciais DataDriven" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[0]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:27.097" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20180508 16:59:27.262" starttime="20180508 16:59:27.097"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:27.262" starttime="20180508 16:59:27.096"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[1]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:27.263" level="INFO">Typing text 'abc' into text field 'id=passwd'.</msg>
+<status status="PASS" endtime="20180508 16:59:27.327" starttime="20180508 16:59:27.263"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:27.327" starttime="20180508 16:59:27.262"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:27.327" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 16:59:28.645" starttime="20180508 16:59:27.327"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:28.645" starttime="20180508 16:59:27.090"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:28.645" starttime="20180508 16:59:27.090"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:28.646" starttime="20180508 16:59:27.089"></status>
+</kw>
+<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
+<arguments>
+<arg>${LoginScenario}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${ALERT_BOX}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:28.691" starttime="20180508 16:59:28.646"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'USER_DATA' == 'builtin'</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage}</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:28.726" level="INFO">Current page contains text 'Invalid password.'.</msg>
+<status status="PASS" endtime="20180508 16:59:28.726" starttime="20180508 16:59:28.692"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:28.726" starttime="20180508 16:59:28.691"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:28.727" starttime="20180508 16:59:28.646"></status>
+</kw>
+<kw name="Limpar Campos De Entrada" library="SignInPage">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:28.774" starttime="20180508 16:59:28.727"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:28.830" starttime="20180508 16:59:28.774"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:28.831" starttime="20180508 16:59:28.727"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:28.831" starttime="20180508 16:59:25.276"></status>
+</kw>
+<kw type="foritem" name="${LoginScenario} = ['#BLANK', '#BLANK', 'An email address required.']">
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 16:59:28.831" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 16:59:30.526" starttime="20180508 16:59:28.831"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:30.622" starttime="20180508 16:59:30.527"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:30.622" starttime="20180508 16:59:30.526"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:30.622" starttime="20180508 16:59:28.831"></status>
+</kw>
+<kw name="Tentativa De Login" library="SignInPage">
+<arguments>
+<arg>${LoginScenario}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${USER_DATA}' == 'builtin'</arg>
+<arg>Entrar Credenciais</arg>
+<arg>${Credentials}</arg>
+<arg>ELSE</arg>
+<arg>Entrar Credenciais DataDriven</arg>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Entrar Credenciais DataDriven" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[0]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:30.623" starttime="20180508 16:59:30.623"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[1]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:30.624" starttime="20180508 16:59:30.624"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:30.627" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 16:59:31.922" starttime="20180508 16:59:30.626"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:31.923" starttime="20180508 16:59:30.623"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:31.923" starttime="20180508 16:59:30.622"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:31.923" starttime="20180508 16:59:30.622"></status>
+</kw>
+<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
+<arguments>
+<arg>${LoginScenario}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${ALERT_BOX}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:32.031" starttime="20180508 16:59:31.924"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'USER_DATA' == 'builtin'</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage}</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:32.078" level="INFO">Current page contains text 'An email address required.'.</msg>
+<status status="PASS" endtime="20180508 16:59:32.079" starttime="20180508 16:59:32.032"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:32.079" starttime="20180508 16:59:32.032"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:32.079" starttime="20180508 16:59:31.924"></status>
+</kw>
+<kw name="Limpar Campos De Entrada" library="SignInPage">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:32.116" starttime="20180508 16:59:32.079"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:32.151" starttime="20180508 16:59:32.116"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:32.151" starttime="20180508 16:59:32.079"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:32.152" starttime="20180508 16:59:28.831"></status>
+</kw>
+<kw type="foritem" name="${LoginScenario} = ['paulo@test.com.br', '#BLANK', 'Password is required.']">
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 16:59:32.152" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 16:59:33.878" starttime="20180508 16:59:32.152"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:34.037" starttime="20180508 16:59:33.878"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:34.037" starttime="20180508 16:59:33.878"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:34.037" starttime="20180508 16:59:32.152"></status>
+</kw>
+<kw name="Tentativa De Login" library="SignInPage">
+<arguments>
+<arg>${LoginScenario}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${USER_DATA}' == 'builtin'</arg>
+<arg>Entrar Credenciais</arg>
+<arg>${Credentials}</arg>
+<arg>ELSE</arg>
+<arg>Entrar Credenciais DataDriven</arg>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Entrar Credenciais DataDriven" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[0]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials[0]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:34.039" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20180508 16:59:34.196" starttime="20180508 16:59:34.039"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:34.196" starttime="20180508 16:59:34.038"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials[1]}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:34.197" starttime="20180508 16:59:34.197"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:34.197" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 16:59:35.555" starttime="20180508 16:59:34.197"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.555" starttime="20180508 16:59:34.038"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.555" starttime="20180508 16:59:34.038"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.555" starttime="20180508 16:59:34.037"></status>
+</kw>
+<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
+<arguments>
+<arg>${LoginScenario}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${ALERT_BOX}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:35.602" starttime="20180508 16:59:35.560"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'USER_DATA' == 'builtin'</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage}</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:35.663" level="INFO">Current page contains text 'Password is required.'.</msg>
+<status status="PASS" endtime="20180508 16:59:35.663" starttime="20180508 16:59:35.610"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.663" starttime="20180508 16:59:35.603"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.663" starttime="20180508 16:59:35.556"></status>
+</kw>
+<kw name="Limpar Campos De Entrada" library="SignInPage">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:35.721" starttime="20180508 16:59:35.663"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:35.760" starttime="20180508 16:59:35.722"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.760" starttime="20180508 16:59:35.663"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.760" starttime="20180508 16:59:32.152"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.760" starttime="20180508 16:59:20.894"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:35.760" starttime="20180508 16:59:20.894"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180508 16:59:37.024" starttime="20180508 16:59:35.762"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:37.025" starttime="20180508 16:59:35.761"></status>
+</kw>
+<tags>
+<tag>DataDriven</tag>
+</tags>
+<status status="PASS" endtime="20180508 16:59:37.025" critical="yes" starttime="20180508 16:59:08.569"></status>
+</test>
+<doc>Esta suite representa os testes de login com DataDriven do DEMOCENTER para a aplicação web MyStore</doc>
+<status status="PASS" endtime="20180508 16:59:37.025" starttime="20180508 16:59:08.547"></status>
+</suite>
+<suite source="/home/estanqueiro/projects/mystore/Tests/Login.robot" id="s1-s3" name="Login">
+<test id="s1-s3-t1" name="Login">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:37.050" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180508 16:59:41.658" starttime="20180508 16:59:37.050"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180508 16:59:41.770" starttime="20180508 16:59:41.658"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:41.770" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180508 16:59:47.947" starttime="20180508 16:59:41.770"></status>
+</kw>
+<kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Automation Practice Website</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:48.030" starttime="20180508 16:59:47.952"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20180508 16:59:48.046" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180508 16:59:48.046" starttime="20180508 16:59:48.030"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:48.046" starttime="20180508 16:59:47.947"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:48.046" starttime="20180508 16:59:37.049"></status>
+</kw>
+<kw name="Fazer &quot;Login&quot;" library="MyStoreApp">
+<arguments>
+<arg>${VALID_USER_AND_PASSWORD}</arg>
+</arguments>
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 16:59:48.056" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 16:59:49.987" starttime="20180508 16:59:48.056"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:50.078" starttime="20180508 16:59:49.988"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:50.078" starttime="20180508 16:59:49.988"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:50.078" starttime="20180508 16:59:48.055"></status>
+</kw>
+<kw name="Entrar Credenciais" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Email}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:50.080" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20180508 16:59:50.191" starttime="20180508 16:59:50.079"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:50.191" starttime="20180508 16:59:50.079"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Password}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:50.192" level="INFO">Typing text 'teste' into text field 'id=passwd'.</msg>
+<status status="PASS" endtime="20180508 16:59:50.318" starttime="20180508 16:59:50.192"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:50.318" starttime="20180508 16:59:50.191"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:50.318" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 16:59:52.675" starttime="20180508 16:59:50.318"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:52.675" starttime="20180508 16:59:50.078"></status>
+</kw>
+<kw name="Verificar &quot;My Account Page&quot; Carregada" library="MyAccountPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Welcome to your account.</arg>
+</arguments>
+<status status="PASS" endtime="20180508 16:59:52.845" starttime="20180508 16:59:52.676"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:52.845" starttime="20180508 16:59:52.675"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:52.845" starttime="20180508 16:59:48.055"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180508 16:59:54.016" starttime="20180508 16:59:52.846"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:54.016" starttime="20180508 16:59:52.845"></status>
+</kw>
+<status status="PASS" endtime="20180508 16:59:54.016" critical="yes" starttime="20180508 16:59:37.049"></status>
+</test>
+<test id="s1-s3-t2" name="Tentativa de login deve apresentar mensagem de erro correta">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:54.018" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180508 16:59:58.465" starttime="20180508 16:59:54.017"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180508 16:59:58.570" starttime="20180508 16:59:58.466"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+</arguments>
+<msg timestamp="20180508 16:59:58.570" level="INFO">Opening url 'http://automationpractice.com/index.php/'</msg>
+<status status="PASS" endtime="20180508 17:00:03.934" starttime="20180508 16:59:58.570"></status>
+</kw>
+<kw name="Verificar &quot;Home Page&quot; Carregada" library="HomePage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Automation Practice Website</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:03.978" starttime="20180508 17:00:03.935"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20180508 17:00:03.984" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20180508 17:00:03.985" starttime="20180508 17:00:03.978"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:03.985" starttime="20180508 17:00:03.934"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:03.985" starttime="20180508 16:59:54.017"></status>
+</kw>
+<kw name="Testar Múltiplos Cenários de Login" library="MyStoreApp">
+<arguments>
+<arg>${UNREGISTERED_USER}</arg>
+</arguments>
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 17:00:03.986" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 17:00:07.029" starttime="20180508 17:00:03.986"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:07.111" starttime="20180508 17:00:07.029"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:07.111" starttime="20180508 17:00:07.029"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:07.111" starttime="20180508 17:00:03.986"></status>
+</kw>
+<kw name="Tentativa De Login" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${USER_DATA}' == 'builtin'</arg>
+<arg>Entrar Credenciais</arg>
+<arg>${Credentials}</arg>
+<arg>ELSE</arg>
+<arg>Entrar Credenciais DataDriven</arg>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Entrar Credenciais" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Email}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:07.117" level="INFO">Typing text 'paulo@test.com' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20180508 17:00:07.220" starttime="20180508 17:00:07.117"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:07.221" starttime="20180508 17:00:07.117"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Password}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:07.222" level="INFO">Typing text 'teste' into text field 'id=passwd'.</msg>
+<status status="PASS" endtime="20180508 17:00:07.305" starttime="20180508 17:00:07.221"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:07.306" starttime="20180508 17:00:07.221"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:07.306" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 17:00:08.795" starttime="20180508 17:00:07.306"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:08.795" starttime="20180508 17:00:07.116"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:08.795" starttime="20180508 17:00:07.116"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:08.795" starttime="20180508 17:00:07.111"></status>
+</kw>
+<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
+<arguments>
+<arg>${Credentials.ExpectedErrorMessage}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${ALERT_BOX}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:08.860" starttime="20180508 17:00:08.796"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'USER_DATA' == 'builtin'</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage}</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:08.977" level="INFO">Current page contains text 't'.</msg>
+<status status="PASS" endtime="20180508 17:00:08.978" starttime="20180508 17:00:08.864"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:08.978" starttime="20180508 17:00:08.864"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:08.978" starttime="20180508 17:00:08.795"></status>
+</kw>
+<kw name="Limpar Campos De Entrada" library="SignInPage">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:09.000" starttime="20180508 17:00:08.979"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:09.022" starttime="20180508 17:00:09.000"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:09.027" starttime="20180508 17:00:08.978"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:09.027" starttime="20180508 17:00:03.986"></status>
+</kw>
+<kw name="Testar Múltiplos Cenários de Login" library="MyStoreApp">
+<arguments>
+<arg>${INVALID_PASSWORD_USER}</arg>
+</arguments>
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 17:00:09.033" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 17:00:11.584" starttime="20180508 17:00:09.033"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:11.685" starttime="20180508 17:00:11.585"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:11.685" starttime="20180508 17:00:11.585"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:11.685" starttime="20180508 17:00:09.033"></status>
+</kw>
+<kw name="Tentativa De Login" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${USER_DATA}' == 'builtin'</arg>
+<arg>Entrar Credenciais</arg>
+<arg>${Credentials}</arg>
+<arg>ELSE</arg>
+<arg>Entrar Credenciais DataDriven</arg>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Entrar Credenciais" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Email}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:11.687" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20180508 17:00:11.813" starttime="20180508 17:00:11.687"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:11.813" starttime="20180508 17:00:11.686"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Password}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:11.814" level="INFO">Typing text 'abc' into text field 'id=passwd'.</msg>
+<status status="PASS" endtime="20180508 17:00:11.919" starttime="20180508 17:00:11.814"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:11.919" starttime="20180508 17:00:11.813"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:11.923" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 17:00:13.917" starttime="20180508 17:00:11.923"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:13.918" starttime="20180508 17:00:11.686"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:13.918" starttime="20180508 17:00:11.686"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:13.918" starttime="20180508 17:00:11.685"></status>
+</kw>
+<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
+<arguments>
+<arg>${Credentials.ExpectedErrorMessage}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${ALERT_BOX}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:13.978" starttime="20180508 17:00:13.918"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'USER_DATA' == 'builtin'</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage}</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:14.038" level="INFO">Current page contains text 'v'.</msg>
+<status status="PASS" endtime="20180508 17:00:14.038" starttime="20180508 17:00:13.978"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:14.038" starttime="20180508 17:00:13.978"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:14.039" starttime="20180508 17:00:13.918"></status>
+</kw>
+<kw name="Limpar Campos De Entrada" library="SignInPage">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:14.085" starttime="20180508 17:00:14.039"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:14.135" starttime="20180508 17:00:14.085"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:14.135" starttime="20180508 17:00:14.039"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:14.136" starttime="20180508 17:00:09.028"></status>
+</kw>
+<kw name="Testar Múltiplos Cenários de Login" library="MyStoreApp">
+<arguments>
+<arg>${BLANK_CREDENTIALS_USER}</arg>
+</arguments>
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 17:00:14.143" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 17:00:16.510" starttime="20180508 17:00:14.143"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:16.629" starttime="20180508 17:00:16.511"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:16.629" starttime="20180508 17:00:16.510"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:16.629" starttime="20180508 17:00:14.140"></status>
+</kw>
+<kw name="Tentativa De Login" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${USER_DATA}' == 'builtin'</arg>
+<arg>Entrar Credenciais</arg>
+<arg>${Credentials}</arg>
+<arg>ELSE</arg>
+<arg>Entrar Credenciais DataDriven</arg>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Entrar Credenciais" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Email}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:16.631" starttime="20180508 17:00:16.631"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Password}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:16.631" starttime="20180508 17:00:16.631"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:16.632" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 17:00:18.067" starttime="20180508 17:00:16.631"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:18.067" starttime="20180508 17:00:16.630"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:18.067" starttime="20180508 17:00:16.630"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:18.068" starttime="20180508 17:00:16.630"></status>
+</kw>
+<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
+<arguments>
+<arg>${Credentials.ExpectedErrorMessage}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${ALERT_BOX}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:18.115" starttime="20180508 17:00:18.068"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'USER_DATA' == 'builtin'</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage}</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:18.320" level="INFO">Current page contains text ' '.</msg>
+<status status="PASS" endtime="20180508 17:00:18.320" starttime="20180508 17:00:18.115"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:18.320" starttime="20180508 17:00:18.115"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:18.321" starttime="20180508 17:00:18.068"></status>
+</kw>
+<kw name="Limpar Campos De Entrada" library="SignInPage">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:18.331" starttime="20180508 17:00:18.321"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:18.343" starttime="20180508 17:00:18.331"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:18.343" starttime="20180508 17:00:18.321"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:18.343" starttime="20180508 17:00:14.139"></status>
+</kw>
+<kw name="Testar Múltiplos Cenários de Login" library="MyStoreApp">
+<arguments>
+<arg>${BLANK_PASSWORD}</arg>
+</arguments>
+<kw name="Navegar à Página de Login" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180508 17:00:18.345" level="INFO">Clicking link 'Sign in'.</msg>
+<status status="PASS" endtime="20180508 17:00:20.536" starttime="20180508 17:00:18.345"></status>
+</kw>
+<kw name="Verificar &quot;Sign In Page&quot; Carregada" library="SignInPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:20.655" starttime="20180508 17:00:20.537"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:20.659" starttime="20180508 17:00:20.536"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:20.660" starttime="20180508 17:00:18.344"></status>
+</kw>
+<kw name="Tentativa De Login" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${USER_DATA}' == 'builtin'</arg>
+<arg>Entrar Credenciais</arg>
+<arg>${Credentials}</arg>
+<arg>ELSE</arg>
+<arg>Entrar Credenciais DataDriven</arg>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Entrar Credenciais" library="SignInPage">
+<arguments>
+<arg>${Credentials}</arg>
+</arguments>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Email}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+<arg>${Credentials.Email}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:20.667" level="INFO">Typing text 'paulo@test.com.br' into text field 'id=email'.</msg>
+<status status="PASS" endtime="20180508 17:00:20.754" starttime="20180508 17:00:20.667"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:20.754" starttime="20180508 17:00:20.662"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>'${Credentials.Password}' == '#BLANK'</arg>
+<arg>Input Text</arg>
+<arg>${SIGN_IN_PASSWORD}</arg>
+<arg>${Credentials.Password}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:20.755" starttime="20180508 17:00:20.755"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:20.755" level="INFO">Clicking button 'name : SubmitLogin'.</msg>
+<status status="PASS" endtime="20180508 17:00:22.282" starttime="20180508 17:00:20.755"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:22.282" starttime="20180508 17:00:20.661"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:22.282" starttime="20180508 17:00:20.661"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:22.283" starttime="20180508 17:00:20.660"></status>
+</kw>
+<kw name="Verificar Mensagem De Erro Do Login" library="SignInPage">
+<arguments>
+<arg>${Credentials.ExpectedErrorMessage}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${ALERT_BOX}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:22.337" starttime="20180508 17:00:22.283"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'USER_DATA' == 'builtin'</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage}</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain</arg>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${ExpectedErrorMessage[2]}</arg>
+</arguments>
+<msg timestamp="20180508 17:00:22.520" level="INFO">Current page contains text 's'.</msg>
+<status status="PASS" endtime="20180508 17:00:22.520" starttime="20180508 17:00:22.337"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:22.520" starttime="20180508 17:00:22.337"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:22.520" starttime="20180508 17:00:22.283"></status>
+</kw>
+<kw name="Limpar Campos De Entrada" library="SignInPage">
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:22.540" starttime="20180508 17:00:22.520"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${SIGN_IN_PASSWORD}</arg>
+</arguments>
+<status status="PASS" endtime="20180508 17:00:22.557" starttime="20180508 17:00:22.541"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:22.557" starttime="20180508 17:00:22.520"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:22.557" starttime="20180508 17:00:18.344"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180508 17:00:23.833" starttime="20180508 17:00:22.558"></status>
+</kw>
+<status status="PASS" endtime="20180508 17:00:23.833" starttime="20180508 17:00:22.557"></status>
+</kw>
+<tags>
+<tag>Login</tag>
+</tags>
+<status status="PASS" endtime="20180508 17:00:23.834" critical="yes" starttime="20180508 16:59:54.017"></status>
+</test>
+<doc>Esta suite representa os testes de login do DEMOCENTER para a aplicação web MyStore</doc>
+<status status="PASS" endtime="20180508 17:00:23.834" starttime="20180508 16:59:37.026"></status>
+</suite>
+<status status="PASS" endtime="20180508 17:00:23.837" starttime="20180508 16:57:29.048"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="7">Critical Tests</stat>
-<stat fail="0" pass="7">All Tests</stat>
+<stat fail="0" pass="8">Critical Tests</stat>
+<stat fail="0" pass="8">All Tests</stat>
 </total>
 <tag>
+<stat fail="0" pass="1">DataDriven</stat>
 <stat fail="0" pass="1">Debug</stat>
 <stat fail="0" pass="1">Login</stat>
 <stat fail="0" pass="1">Regression</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="MyStore" pass="7">MyStore</stat>
+<stat fail="0" id="s1" name="Tests" pass="8">Tests</stat>
+<stat fail="0" id="s1-s1" name="Carrinho" pass="5">Tests.Carrinho</stat>
+<stat fail="0" id="s1-s2" name="DataDrivenLogin" pass="1">Tests.DataDrivenLogin</stat>
+<stat fail="0" id="s1-s3" name="Login" pass="2">Tests.Login</stat>
 </suite>
 </statistics>
 <errors>

@@ -2,6 +2,7 @@
 ${BROWSER} =  firefox
 ${START_URL} =  http://automationpractice.com/index.php/
 ${SEARCH_TERM} =  summer dresses
+${INVALID_CREDENTIALS_PATH_CSV} =  /home/estanqueiro/projects/mystore/Data/Users.csv
 
 # Input Data
 &{VALID_USER_AND_PASSWORD}  Email=paulo@test.com.br  Password=teste

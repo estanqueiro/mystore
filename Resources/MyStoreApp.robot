@@ -19,6 +19,14 @@ Fazer "Login"
     SignInPage.Entrar Credenciais   ${Credentials}
     MyAccountPage.Verificar "My Account Page" Carregada
 
+Tentativa De Login Com Múltiplos Cenários Inválidos
+    [Arguments]  ${InvalidLoginScenarios}
+    :FOR  ${LoginScenario}  IN  @{InvalidLoginScenarios}
+    \  HomePage.Navegar à Página de Login
+    \  SignInPage.Tentativa De Login  ${LoginScenario}
+    \  SignInPage.Verificar Mensagem de Erro do Login  ${LoginScenario}
+    \  SignInPage.Limpar Campos De Entrada
+
 Testar Múltiplos Cenários de Login
     [Arguments]  ${Credentials}
     HomePage.Navegar à Página de Login

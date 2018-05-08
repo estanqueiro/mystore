@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e294c407-3a83-42e0-976c-fce534cbb3e6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/PO/MyAccountPage.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mystore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mystore.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomLibs/Csv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Users.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/DataManager.robot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/DataDrivenLogin.robot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/Login.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/InputData.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Data/InputData.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Common.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Common.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resources/MyStoreApp.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/MyStoreApp.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/PO/CartPage.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/PO/CartPage.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/PO/HomePage.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/PO/HomePage.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/PO/ShippingPage.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/PO/ShippingPage.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resources/PO/SignInPage.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/PO/SignInPage.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Results/geckodriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/Results/geckodriver.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/Results/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Results/output.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/Results/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/MyStore.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/MyStore.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/MyStore.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Carrinho.robot" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,83 +26,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ShippingPage.robot" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Resources/PO/ShippingPage.robot">
+      <file leaf-file-name="DataDrivenLogin.robot" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/DataDrivenLogin.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="26" />
               <folding>
-                <element signature="e#43#155#0" />
+                <element signature="e#0#390#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartPage.robot" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Resources/PO/CartPage.robot">
+      <file leaf-file-name="Login.robot" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/Login.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyStore.robot" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/MyStore.robot">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyStoreApp.robot" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Resources/MyStoreApp.robot">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+            <state relative-caret-position="225">
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
-                <element signature="e#0#506#0" expanded="true" />
+                <element signature="e#0#296#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyAccountPage.robot" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Resources/PO/MyAccountPage.robot">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomePage.robot" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Resources/PO/HomePage.robot">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignInPage.robot" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Resources/PO/SignInPage.robot">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="e#43#211#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Common.robot" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Resources/Common.robot">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -112,8 +53,32 @@
       <file leaf-file-name="InputData.robot" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data/InputData.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="45">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyStoreApp.robot" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Resources/MyStoreApp.robot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#506#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignInPage.robot" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Resources/PO/SignInPage.robot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="46" />
+              <folding>
+                <element signature="e#43#211#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,15 +110,21 @@
         <option value="$PROJECT_DIR$/Resources/PO/PaymentPage.robot" />
         <option value="$PROJECT_DIR$/Resources/PO/AddressPage.robot" />
         <option value="$PROJECT_DIR$/Resources/PO/OrderSummaryPage.robot" />
-        <option value="$PROJECT_DIR$/Data/InputData.robot" />
         <option value="$PROJECT_DIR$/Resources/Common.robot" />
-        <option value="$PROJECT_DIR$/Resources/MyStoreApp.robot" />
         <option value="$PROJECT_DIR$/Resources/PO/MyAccountPage.robot" />
         <option value="$PROJECT_DIR$/Resources/PO/HomePage.robot" />
-        <option value="$PROJECT_DIR$/Resources/PO/SignInPage.robot" />
         <option value="$PROJECT_DIR$/Resources/PO/ShippingPage.robot" />
         <option value="$PROJECT_DIR$/Tests/MyStore.robot" />
         <option value="$PROJECT_DIR$/Resources/PO/CartPage.robot" />
+        <option value="$PROJECT_DIR$/Data/Users.csv" />
+        <option value="$PROJECT_DIR$/CustomLibs/Csv.py" />
+        <option value="$PROJECT_DIR$/Resources/DataManager.robot" />
+        <option value="$PROJECT_DIR$/Tests/Carrinho.robot" />
+        <option value="$PROJECT_DIR$/Resources/MyStoreApp.robot" />
+        <option value="$PROJECT_DIR$/Resources/PO/SignInPage.robot" />
+        <option value="$PROJECT_DIR$/Tests/DataDrivenLogin.robot" />
+        <option value="$PROJECT_DIR$/Tests/Login.robot" />
+        <option value="$PROJECT_DIR$/Data/InputData.robot" />
       </list>
     </option>
   </component>
@@ -178,6 +149,11 @@
             <path>
               <item name="mystore" type="b2602c69:ProjectViewProjectNode" />
               <item name="mystore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mystore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mystore" type="462c0819:PsiDirectoryNode" />
+              <item name="CustomLibs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mystore" type="b2602c69:ProjectViewProjectNode" />
@@ -213,15 +189,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.robot" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Tests" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Resources" />
     </key>
   </component>
   <component name="RobotOptionsProvider">
-    <option name="debug" value="true" />
     <option name="capitalizeKeywords" value="true" />
     <option name="inlineVariableSearch" value="true" />
   </component>
@@ -260,17 +238,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="954" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-11" width="1857" height="962" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2319869" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2319869" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32928312" />
-      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5016376" side_tool="true" weight="0.31757575" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Python Console" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.3183475" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49836245" visible="true" weight="0.31713244" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -279,7 +256,7 @@
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32955974" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32928312" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -301,45 +278,13 @@
       <window_info anchor="bottom" id="Python Console" order="2" />
     </layout-to-restore>
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Resources/PO/SignInPage.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/Common.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/InputData.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="93" selection-start-line="10" selection-start-column="93" selection-end-line="10" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/PO/CartPage.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/PO/SignInPage.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/PO/ShippingPage.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -361,7 +306,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/MyStore.robot">
+    <entry file="file://$PROJECT_DIR$/Tests/Carrinho.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
@@ -410,7 +355,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/MyStore.robot">
+    <entry file="file://$PROJECT_DIR$/Tests/Carrinho.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
@@ -494,7 +439,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/MyStore.robot">
+    <entry file="file://$PROJECT_DIR$/Tests/Carrinho.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
@@ -557,7 +502,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/MyStore.robot">
+    <entry file="file://$PROJECT_DIR$/Tests/Carrinho.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
@@ -599,44 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/PO/MyAccountPage.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/PO/SignInPage.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#43#211#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/InputData.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/Common.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/PO/HomePage.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/PO/ShippingPage.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -654,19 +561,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/MyStore.robot">
+    <entry file="file://$PROJECT_DIR$/Resources/PO/MyAccountPage.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="15">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/PO/HomePage.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/Common.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CustomLibs/Csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Carrinho.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/DataManager.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Users.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/DataDrivenLogin.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Login.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/InputData.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/MyStoreApp.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+        <state relative-caret-position="375">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding>
             <element signature="e#0#506#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/PO/SignInPage.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="46" />
+          <folding>
+            <element signature="e#43#211#0" />
           </folding>
         </state>
       </provider>

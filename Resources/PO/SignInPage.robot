@@ -13,7 +13,7 @@ Verificar "Sign In Page" Carregada
 
 Tentativa De Login
     [Arguments]  ${Credentials}
-    Entrar Credenciais  ${Credentials}
+    Run Keyword If  '${USER_DATA}' == 'builtin'  Entrar Credenciais  ${Credentials}  ELSE  Entrar Credenciais DataDriven  ${Credentials}
 
 Entrar Credenciais
     [Arguments]  ${Credentials}
@@ -21,10 +21,16 @@ Entrar Credenciais
     Run Keyword Unless  '${Credentials.Password}' == '#BLANK'   Input Text      ${SIGN_IN_PASSWORD}  ${Credentials.Password}
     Click Button    ${LOGIN_BUTTON}
 
+Entrar Credenciais DataDriven
+    [Arguments]  ${Credentials}
+    Run Keyword Unless  '${Credentials[0]}' == '#BLANK'      Input Text      ${SIGN_IN_EMAIL}     ${Credentials[0]}
+    Run Keyword Unless  '${Credentials[1]}' == '#BLANK'   Input Text      ${SIGN_IN_PASSWORD}  ${Credentials[1]}
+    Click Button    ${LOGIN_BUTTON}
+
 Verificar Mensagem De Erro Do Login
     [Arguments]  ${ExpectedErrorMessage}
     Wait Until Page Contains Element  ${ALERT_BOX}
-    Page Should Contain  ${ExpectedErrorMessage}
+    Run Keyword If  'USER_DATA' == 'builtin'  Page Should Contain  ${ExpectedErrorMessage}  ELSE  Page Should Contain  ${ExpectedErrorMessage[2]}
 
 Limpar Campos De Entrada
     Clear Element Text  ${SIGN_IN_EMAIL}

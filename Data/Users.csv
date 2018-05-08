@@ -1,0 +1,4 @@
+paulo@test.com,teste,Authentication failed.
+paulo@test.com.br,abc,Invalid password.
+#BLANK,#BLANK,An email address required.
+paulo@test.com.br,#BLANK,Password is required.
